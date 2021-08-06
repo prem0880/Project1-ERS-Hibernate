@@ -14,7 +14,6 @@ import com.ers.model.Employee;
 import com.ers.service.EmployeeLoginService;
 import com.ers.service.EmployeeLoginServiceImpl;
 
-@WebServlet("/EmployeeLoginServlet")
 public class EmployeeLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
