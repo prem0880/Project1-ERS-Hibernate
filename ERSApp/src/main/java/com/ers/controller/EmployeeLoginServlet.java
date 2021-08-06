@@ -24,11 +24,11 @@ public class EmployeeLoginServlet extends HttpServlet {
 		
 		Integer id=Integer.parseInt(request.getParameter("uname"));
 		String pwd=request.getParameter("pass");
-		
 		Employee employee = new Employee();
 	
 		employee.setId(id);
 		employee.setPassword(pwd);
+	
 		
 		EmployeeLoginService elogin = new EmployeeLoginServiceImpl();
 		
@@ -36,10 +36,22 @@ public class EmployeeLoginServlet extends HttpServlet {
 		
 		
 		if(loginstat == true) {
-			
-	     			System.out.println("Username and Password are matched!!!");
-				 	RequestDispatcher rd=request.getRequestDispatcher("LoginSuccess.html");  
+				
+					String logintype = elogin.checkLoginType(employee);
+					System.out.println(logintype);
+					if(logintype.equals("employee"))
+					{
+	     			System.out.println("Username and Password are matched for Employee!!!");
+				 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.html");  
 			        rd.forward(request,response);
+			        }
+					else if(logintype.equals("manager"))
+					{
+						System.out.println("Username and Password are matched for manager!!!");
+					 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.html");  
+				        rd.forward(request,response);
+					}
+					
 			
 		}
 		else

@@ -6,4 +6,5 @@ public interface EmployeeLoginDao {
 
 	public Boolean checkLogin(Employee e);
 	
+	public String checkLoginType(Employee e);
 }

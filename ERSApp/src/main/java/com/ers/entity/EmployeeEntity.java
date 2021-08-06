@@ -65,6 +65,13 @@ public class EmployeeEntity {
 	public void setType(String type) {
 		Type = type;
 	}
+	@Override
+	public String toString() {
+		return "EmployeeEntity [Id=" + Id + ", Name=" + Name + ", Password=" + Password + ", Designation=" + Designation
+				+ ", Department=" + Department + ", Email=" + Email + ", Type=" + Type + "]";
+	}
+	
+	
 
 	
 }
