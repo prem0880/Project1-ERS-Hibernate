@@ -1,7 +1,10 @@
 package com.ers.service;
 
+import java.util.List;
+
 import com.ers.dao.EmployeeLoginDao;
 import com.ers.dao.EmployeeLoginDaoImpl;
+import com.ers.entity.EmployeeEntity;
 import com.ers.model.Employee;
 
 public class EmployeeLoginServiceImpl implements EmployeeLoginService {
@@ -25,5 +28,12 @@ public class EmployeeLoginServiceImpl implements EmployeeLoginService {
 	public Employee ViewDetails(Employee e) {
 	
 		return edao.ViewDetails(e);
+	}
+	
+	
+	@Override
+	public List<EmployeeEntity> ViewAllDetails() {
+	
+		return edao.ViewAllDetails();
 	}
 }

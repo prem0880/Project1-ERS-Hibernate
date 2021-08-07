@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1" session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +15,19 @@
 	</style>
 </head>
 <body>
-  <h2>Employee Home</h2>
-  <button type="button" class="btn btn-primary btn-lg btn-block" name="display" onclick="">List All Employee Records</button>
-  <button type="button" class="btn btn-primary btn-lg btn-block" name="update">Update Employee Records</button>
-  <button type="button" class="btn btn-primary btn-lg btn-block" name="delete">Delete Employee Records</button>
+<%
+HttpSession session1 = request.getSession(true);
+Integer user = (Integer) session1.getAttribute("uname");
+String pass = (String) session1.getAttribute("upass");
+out.println(user+" "+pass);
+%>
+
+  <h2>Manager Home</h2>
+  <form action="http://localhost:8080/ERSApp/ManagerViewDetails" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="VIEW All EMPLOYEE INFORMATION"/>
+  </form>
+ 
+
 
 </body>
 </html>

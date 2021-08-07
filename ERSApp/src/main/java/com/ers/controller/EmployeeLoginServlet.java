@@ -54,9 +54,13 @@ public class EmployeeLoginServlet extends HttpServlet {
 			        }
 					else if(logintype.equals("manager"))
 					{
+						HttpSession session=request.getSession();
+						session.setAttribute("uname",id);
+					    session.setAttribute("upass",pwd);
+						
 						request.setAttribute("id",employee.getId());
 						System.out.println("Username and Password are matched for manager!!!");
-					 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.html");  
+					 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.jsp");  
 				        rd.forward(request,response);
 					}
 					

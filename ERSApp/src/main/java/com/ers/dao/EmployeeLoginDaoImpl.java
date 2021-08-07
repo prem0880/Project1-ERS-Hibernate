@@ -1,5 +1,7 @@
 package com.ers.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 import com.ers.entity.EmployeeEntity;
@@ -109,4 +111,15 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 		}
 		   return e;
 	}
+	
+	@Override
+	public List<EmployeeEntity> ViewAllDetails() {
+	
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		
+		return session.createQuery("FROM EmployeeEntity", EmployeeEntity.class).getResultList();
+		
+		
+	}
+	
 }
