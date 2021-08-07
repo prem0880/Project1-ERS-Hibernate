@@ -26,11 +26,14 @@ session.setAttribute("uname",user);
 
   <h2>Employee Home</h2>
   <form action="http://localhost:8080/ERSApp/EmployeeViewDetails" method="get">
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="VIEW YOUR INFORMATION"/>
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View Your Information"/>
   </form>
-  <button type="button" class="btn btn-primary btn-lg btn-block" name="update">UPDATE YOUR INFORMATION</button>
-  <button type="button" class="btn btn-primary btn-lg btn-block" name="delete">SUBMIT A REIMBURSEMENT REQUEST</button>
-
+  <form action="http://localhost:8080/ERSApp/UpdateDetails.jsp" method="get">
+   <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Your Information"/>
+  </form>
+  <form action="" method="get">
+   <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit a Reimbursement Request"/>
+  </form>
 
 
 </body>

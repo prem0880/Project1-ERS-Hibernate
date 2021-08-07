@@ -122,4 +122,42 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 		
 	}
 	
+	
+	
+	@Override
+	public void UpdateDetails(Employee e) {
+	
+		try {
+			
+			Session session=HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction(); 
+			EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
+			if(session!=null) {
+				
+				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
+				
+				if(ee1.getName().equals(e.getName()) == false) {
+				ee1.setName(e.getName());}
+				if(ee1.getDesignation().equals(e.getDesignation()) == false) {
+				ee1.setDesignation(e.getDesignation());}
+				if(ee1.getDepartment().equals(e.getDepartment()) == false) {
+				ee1.setDepartment(e.getDepartment());}
+				if(ee1.getEmail().equals(e.getEmail()) == false) {
+				ee1.setEmail(e.getEmail());}
+				
+				session.saveOrUpdate(ee1);
+				System.out.println("Employee Details Updated...");
+				session.getTransaction().commit();
+				
+				
+			}
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		
+		
+	}
+	
 }

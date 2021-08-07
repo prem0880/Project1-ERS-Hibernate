@@ -49,7 +49,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 					    session.setAttribute("upass",pwd);
 						
 	     			System.out.println("Username and Password are matched for Employee!!!");
-				 	RequestDispatcher rd=request.getRequestDispatcher("LoginEmployee.jsp");  
+				 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.jsp");  
 			        rd.forward(request,response);
 			        }
 					else if(logintype.equals("manager"))

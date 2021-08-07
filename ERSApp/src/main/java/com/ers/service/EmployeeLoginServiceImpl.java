@@ -36,4 +36,9 @@ public class EmployeeLoginServiceImpl implements EmployeeLoginService {
 	
 		return edao.ViewAllDetails();
 	}
+	@Override
+	public void UpdateDetails(Employee e) {
+	
+		edao.UpdateDetails(e);
+	}
 }

@@ -34,6 +34,12 @@
   	<description></description>
   	<servlet-class>com.ers.controller.ManagerViewDetails</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmployeeUpdateDetails</servlet-name>
+  	<display-name>EmployeeUpdateDetails</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.EmployeeUpdateDetails</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmployeeSignUp</servlet-name>
   	<url-pattern>/EmployeeSignUp</url-pattern>
@@ -53,5 +59,9 @@
   <servlet-mapping>
   	<servlet-name>ManagerViewDetails</servlet-name>
   	<url-pattern>/ManagerViewDetails</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeUpdateDetails</servlet-name>
+  	<url-pattern>/EmployeeUpdateDetails</url-pattern>
   </servlet-mapping>
 </web-app>
