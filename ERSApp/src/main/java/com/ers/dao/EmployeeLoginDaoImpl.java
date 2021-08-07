@@ -79,4 +79,34 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 		return stat;
 
 	}
+	
+	
+	
+	@Override
+	public Employee ViewDetails(Employee e) {
+		
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
+		if (session != null) {
+			   try {
+				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
+				//System.out.println(ee1.getId()+" "+ee1.getName()+" "+ee1.getDesignation()+" "+ee1.getDepartment()+" "+ee1.getEmail()+" "+ee1.getType()); 
+//				e.setId(ee1.getId());
+//				e.setName(ee1.getName());
+//				e.setDesignation(ee1.getDesignation());
+//				e.setDepartment(ee1.getDepartment());
+//				e.setEmail(ee1.getEmail());
+//				e.setType(ee1.getType());
+
+				e = new Employee(ee1.getId(),ee1.getName(),ee1.getDesignation(),ee1.getDepartment(),ee1.getEmail(),ee1.getType());
+				
+			   }   catch (Exception e1) {
+				   e1.printStackTrace();
+			   }
+			   
+		
+		
+		}
+		   return e;
+	}
 }

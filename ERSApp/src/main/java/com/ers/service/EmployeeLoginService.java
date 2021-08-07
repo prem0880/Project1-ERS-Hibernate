@@ -7,4 +7,6 @@ public interface EmployeeLoginService {
 	public Boolean checkLogin(Employee e);
 	
 	public String checkLoginType(Employee e);
+	
+	public Employee ViewDetails(Employee e);
 }

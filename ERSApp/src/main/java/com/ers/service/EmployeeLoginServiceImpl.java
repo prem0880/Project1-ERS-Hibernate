@@ -19,4 +19,11 @@ public class EmployeeLoginServiceImpl implements EmployeeLoginService {
 	
 		return edao.checkLoginType(e);
 	}
+	
+	
+	@Override
+	public Employee ViewDetails(Employee e) {
+	
+		return edao.ViewDetails(e);
+	}
 }

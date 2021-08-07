@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ers.model.Employee;
 import com.ers.service.EmployeeLoginService;
@@ -37,16 +38,23 @@ public class EmployeeLoginServlet extends HttpServlet {
 		
 		if(loginstat == true) {
 				
+	
 					String logintype = elogin.checkLoginType(employee);
+				
 					System.out.println(logintype);
 					if(logintype.equals("employee"))
 					{
+						HttpSession session=request.getSession();
+						session.setAttribute("uname",id);
+					    session.setAttribute("upass",pwd);
+						
 	     			System.out.println("Username and Password are matched for Employee!!!");
-				 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.html");  
+				 	RequestDispatcher rd=request.getRequestDispatcher("LoginEmployee.jsp");  
 			        rd.forward(request,response);
 			        }
 					else if(logintype.equals("manager"))
 					{
+						request.setAttribute("id",employee.getId());
 						System.out.println("Username and Password are matched for manager!!!");
 					 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.html");  
 				        rd.forward(request,response);

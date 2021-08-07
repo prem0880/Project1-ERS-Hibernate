@@ -14,6 +14,19 @@ public class Employee {
 	public Employee() {
 		super();
 	}
+	
+	
+	public Employee(Integer id, String name, String designation, String department, String email, String type) {
+		super();
+		Id = id;
+		Name = name;
+		Designation = designation;
+		Department = department;
+		Email = email;
+		Type = type;
+	}
+
+
 	public Integer getId() {
 		return Id;
 	}
