@@ -31,7 +31,7 @@ session.setAttribute("uname",user);
   <form action="http://localhost:8080/ERSApp/UpdateDetails.jsp" method="get">
    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Your Information"/>
   </form>
-  <form action="" method="get">
+  <form action="http://localhost:8080/ERSApp/ReimbursementRequest.jsp" method="get">
    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit a Reimbursement Request"/>
   </form>
 

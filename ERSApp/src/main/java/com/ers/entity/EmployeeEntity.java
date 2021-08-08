@@ -1,9 +1,13 @@
 package com.ers.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name="Employee")
@@ -19,9 +23,24 @@ public class EmployeeEntity {
 	private String Email;
 	private String Type;
 	
-	
+//	@OneToMany(mappedBy="EmployeeEntity",cascade=CascadeType.ALL)
+//	private Set<EmployeeReimbursementEntity> rset;
+//	
+//	public Set<EmployeeReimbursementEntity> getRset() {
+//		return rset;
+//	}
+//
+//	public void setRset(Set<EmployeeReimbursementEntity> rset) {
+//		this.rset = rset;
+//	}
+
 	public EmployeeEntity() {
 		super();
+	}
+	
+	public EmployeeEntity(Integer id) {
+		super();
+		Id = id;
 	}
 	public Integer getId() {
 		return Id;

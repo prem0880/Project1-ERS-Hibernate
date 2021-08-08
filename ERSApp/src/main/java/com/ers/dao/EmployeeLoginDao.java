@@ -16,5 +16,7 @@ public interface EmployeeLoginDao {
 	public List<EmployeeEntity> ViewAllDetails();
 
 	public void UpdateDetails(Employee e);
+	
+
 }
 

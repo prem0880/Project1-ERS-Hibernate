@@ -2,21 +2,23 @@ package com.ers.dao;
 
 import org.hibernate.Session;
 
-import com.ers.model.Employee;
-import com.ers.utility.EmployeeMapper;
+import com.ers.model.EmployeeReimbursement;
 import com.ers.utility.HibernateUtil;
+import com.ers.utility.EmployeeReimbursementMapper;
 
+public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 
-public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
-
+	
+	
 	@Override
-	public void addEmployee(Employee e) {
+	public void addRequest(EmployeeReimbursement er) {
+		
 		
 		try {
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction(); 
-			session.save(EmployeeMapper.mapEmployee(e));
+			session.save(EmployeeReimbursementMapper.mapReimbursement(er));
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
 			
@@ -27,6 +29,7 @@ public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 		}
 
 		
+		
+		
 	}
-	
 }
