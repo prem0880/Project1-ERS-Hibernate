@@ -25,15 +25,12 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 			session.save(EmployeeReimbursementMapper.mapReimbursement(er));
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
-			
-			
+
 		} catch (Exception e1) {
 			
 			e1.printStackTrace();
 		}
 
-		
-		
 		
 	}
 	
@@ -43,6 +40,14 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 		Session session=HibernateUtil.getSessionFactory().openSession();
 	    return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 0 ", EmployeeReimbursementEntity.class).getResultList();		  
 		
+	}
+	
+	@Override
+	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
+	
+		Session session=HibernateUtil.getSessionFactory().openSession();
+	    return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 1 ", EmployeeReimbursementEntity.class).getResultList();	
+	
 	}
 	
 	

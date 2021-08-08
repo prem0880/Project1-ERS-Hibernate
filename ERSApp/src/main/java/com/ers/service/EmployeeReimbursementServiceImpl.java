@@ -25,6 +25,12 @@ public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementSe
 		return erd.viewPendingRequest(er);
 		
 	}
+	@Override
+	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
+
+		return erd.viewResolvedRequest(er);
+		
+	}
 	
 	
 }

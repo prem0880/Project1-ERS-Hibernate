@@ -11,6 +11,8 @@ public interface EmployeeReimbursementService {
 	
 	public List<EmployeeReimbursementEntity>  viewPendingRequest(EmployeeReimbursement er);
 	
+	public List<EmployeeReimbursementEntity>  viewResolvedRequest(EmployeeReimbursement er);
+	
 	
 	
 	

@@ -10,5 +10,9 @@ public interface EmployeeReimbursementDao {
 	public void addRequest(EmployeeReimbursement er);
 	
 	public List<EmployeeReimbursementEntity>  viewPendingRequest(EmployeeReimbursement er);
+
+	public List<EmployeeReimbursementEntity>  viewResolvedRequest(EmployeeReimbursement er);
+
+	
 	
 }
