@@ -1,6 +1,10 @@
 package com.ers.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
+
+import com.ers.entity.EmployeeReimbursementEntity;
 
 import com.ers.model.EmployeeReimbursement;
 import com.ers.utility.HibernateUtil;
@@ -32,4 +36,16 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 		
 		
 	}
+	
+	@Override
+	public List<EmployeeReimbursementEntity> viewPendingRequest(EmployeeReimbursement er) {
+		
+		Session session=HibernateUtil.getSessionFactory().openSession();
+	    return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 0 ", EmployeeReimbursementEntity.class).getResultList();		  
+		
+	}
+	
+	
+	
+	
 }

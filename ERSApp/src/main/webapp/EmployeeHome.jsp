@@ -34,6 +34,14 @@ session.setAttribute("uname",user);
   <form action="http://localhost:8080/ERSApp/ReimbursementRequest.jsp" method="get">
    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit a Reimbursement Request"/>
   </form>
+  <form action="http://localhost:8080/ERSApp/EmployeePendingRequests" method="get">
+   <input type="submit" class="btn btn-primary btn-lg btn-block" value="View Pending Reimbursement Requests"/>
+  </form>
+  <form action="http://localhost:8080/ERSApp/EmployeeReimbursementRequest" method="get">
+   <input type="submit" class="btn btn-primary btn-lg btn-block" value="View Resolved Reimbursement Requests"/>
+  </form>
+  
+  
 
 
 </body>

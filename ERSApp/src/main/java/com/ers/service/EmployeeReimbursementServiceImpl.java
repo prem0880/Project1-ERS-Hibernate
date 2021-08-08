@@ -1,6 +1,9 @@
 package com.ers.service;
 
+import java.util.List;
+
 import com.ers.dao.EmployeeReimbursementDaoImpl;
+import com.ers.entity.EmployeeReimbursementEntity;
 import com.ers.model.EmployeeReimbursement;
 
 public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementService {
@@ -14,4 +17,15 @@ public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementSe
 		
 		
 	}
+	
+	@Override
+	public List<EmployeeReimbursementEntity>  viewPendingRequest(EmployeeReimbursement er) {
+	
+		
+		return erd.viewPendingRequest(er);
+		
+	}
+	
+	
 }
+
