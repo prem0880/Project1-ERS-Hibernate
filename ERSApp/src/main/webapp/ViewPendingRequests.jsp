@@ -25,6 +25,11 @@ tr:nth-child(even) {
 
 </head>
 <body>
+<%HttpSession session1 = request.getSession(true);%>
+<%Integer eid=(Integer)session1.getAttribute("id");%>
+
+
+
 <h2>Pending Reimbursement Requests</h2>
 
 <table>
@@ -39,6 +44,7 @@ tr:nth-child(even) {
   </tr>
   <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("plist");
         for(EmployeeReimbursementEntity ere:e){%>
+        <%if(ere.getEmployeeEntity().getId() == eid){ %>
         <%-- Arranging data in tabular form
         --%>
             <tr>
@@ -49,7 +55,7 @@ tr:nth-child(even) {
                 <td><%=ere.getTransactionDate()%></td>
                 <td><%=ere.getDateOfSubmission()%></td>
                 <td><%=ere.getStatusOfApplication()%></td>
-                
+                <% }%>
             </tr>
             <%}%>  
 </table>

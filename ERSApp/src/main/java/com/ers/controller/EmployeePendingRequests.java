@@ -27,6 +27,7 @@ public class EmployeePendingRequests extends HttpServlet {
 		HttpSession session1 = request.getSession(true);
 		Integer eid=(Integer)session1.getAttribute("uname");
 		
+		
 		out.println(eid);
 		
 		EmployeeReimbursement er= new EmployeeReimbursement();
@@ -41,7 +42,8 @@ public class EmployeePendingRequests extends HttpServlet {
 		List<EmployeeReimbursementEntity> ere=ers.viewPendingRequest(er);
 	
 		request.setAttribute("plist", ere);
-		
+		HttpSession session2 = request.getSession(true);
+		session2.setAttribute("id", eid);
 		RequestDispatcher rd=request.getRequestDispatcher("ViewPendingRequests.jsp");  
         rd.forward(request,response);
 		

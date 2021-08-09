@@ -40,7 +40,8 @@ public class EmployeeResolvedRequests extends HttpServlet {
 		List<EmployeeReimbursementEntity> ere=ers.viewResolvedRequest(er);
 	
 		request.setAttribute("plist", ere);
-		
+		HttpSession session2 = request.getSession(true);
+		session2.setAttribute("Id",eid);
 		RequestDispatcher rd=request.getRequestDispatcher("ViewResolvedRequests.jsp");  
         rd.forward(request,response);
 	
