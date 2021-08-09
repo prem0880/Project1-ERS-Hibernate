@@ -13,8 +13,6 @@ import com.ers.utility.EmployeeReimbursementMapper;
 
 public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 
-	
-	
 	@Override
 	public void addRequest(EmployeeReimbursement er) {
 		
@@ -31,8 +29,7 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 			
 			e1.printStackTrace();
 		}
-
-		
+	
 	}
 	
 	@Override

@@ -35,6 +35,7 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>Employee ID</th>
+    <th>Employee Name</th>
     <th>Reimbursement ID</th>
     <th>Expense Type</th>
     <th>Expense Amount</th>
@@ -49,6 +50,7 @@ tr:nth-child(even) {
         --%>
             <tr>
                 <td><%=ere.getEmployeeEntity().getId() %></td>
+                <td><%=ere.getEmployeeEntity().getName() %></td>
                 <td><%=ere.getId()%></td>
                 <td><%=ere.getExpenseType()%></td>
                 <td><%=ere.getExpenseAmount()%></td>

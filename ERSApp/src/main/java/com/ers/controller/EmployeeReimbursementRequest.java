@@ -28,7 +28,6 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		response.setContentType("text/html");
 		
 		Integer rid=(Integer.parseInt(request.getParameter("rid")));
-		String name=request.getParameter("ename");
 		String type=request.getParameter("expensetype");
 		Integer amount=(Integer.parseInt(request.getParameter("amount")));
 		String tdate=request.getParameter("tdate");

@@ -101,10 +101,6 @@ session2.setAttribute("user", id);
     <label for="Reimbursement"><b>Reimbursement ID</b></label>
     <input type="text" placeholder="Enter Reimbursement ID" name="rid" required>
 	
-
-    <label for="employeename"><b>Employee Name</b></label>
-    <input type="text" placeholder="Enter Employee Name" name="ename" required>
-
    	<label for="Expense Type"><b>Expense Type
 	<select id="Expense Type" name="expensetype">
   		<option value="Medical">Medical</option>
