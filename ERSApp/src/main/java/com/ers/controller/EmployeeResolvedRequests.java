@@ -26,7 +26,7 @@ public class EmployeeResolvedRequests extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session1 = request.getSession(true);
-		Integer eid=(Integer)session1.getAttribute("user");
+		Integer eid=(Integer)session1.getAttribute("uname");
 		
 		EmployeeReimbursement er= new EmployeeReimbursement();
 		
