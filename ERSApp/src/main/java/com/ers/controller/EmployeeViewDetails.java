@@ -24,12 +24,12 @@ public class EmployeeViewDetails extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session = request.getSession(true);
-		Integer id = (Integer) session.getAttribute("uname");
-		//out.println(user);
+		String mail = (String)session.getAttribute("mail");
+		out.println(mail);
 		
 		Employee employee = new Employee();
 		
-		employee.setId(id);
+		employee.setMail(mail);
 	
 		EmployeeLoginService elogin = new EmployeeLoginServiceImpl();
 		

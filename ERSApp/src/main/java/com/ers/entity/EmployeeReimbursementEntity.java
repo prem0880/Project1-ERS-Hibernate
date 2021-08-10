@@ -19,11 +19,11 @@ public class EmployeeReimbursementEntity {
 	private Integer ExpenseAmount;
 	private String TransactionDate;
 	private String DateOfSubmission;
-	private Boolean StatusOfApplication;
+	private String StatusOfApplication;
 	
 	
 	@ManyToOne
-	@JoinColumn(name="EmployeeId")
+	@JoinColumn(name="EmployeeMail")
 	private EmployeeEntity employeeEntity;
 	
 	public EmployeeEntity getEmployeeEntity() {
@@ -62,10 +62,10 @@ public class EmployeeReimbursementEntity {
 	public void setDateOfSubmission(String dateOfSubmission) {
 		DateOfSubmission = dateOfSubmission;
 	}
-	public Boolean getStatusOfApplication() {
+	public String getStatusOfApplication() {
 		return StatusOfApplication;
 	}
-	public void setStatusOfApplication(Boolean statusOfApplication) {
+	public void setStatusOfApplication(String statusOfApplication) {
 		StatusOfApplication = statusOfApplication;
 	}
 	

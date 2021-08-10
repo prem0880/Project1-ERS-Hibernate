@@ -1,26 +1,30 @@
 package com.ers.entity;
 
-import java.util.Set;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 @Table(name="Employee")
 public class EmployeeEntity {
 
 	@Id
-	@Column(name="EmployeeId")
-	private Integer Id;
+	@Column(name="EmployeeMail")
+	private String Mail;
+	@Column(name="EmployeeName")
 	private String Name;
+	@Column(name="EmployeePassword")
 	private String Password;
+	@Column(name="EmployeeDesignation")
 	private String Designation;
+	@Column(name="EmployeeDepartment")
 	private String Department;
-	private String Email;
+	@Column(name="EmployeeContact")
+	private String Contact;
+	@Column(name="EmployeeType")
 	private String Type;
 	
 //	@OneToMany(mappedBy="EmployeeEntity",cascade=CascadeType.ALL)
@@ -37,58 +41,74 @@ public class EmployeeEntity {
 	public EmployeeEntity() {
 		super();
 	}
-	
-	public EmployeeEntity(Integer id) {
+
+	public EmployeeEntity(String mail) {
 		super();
-		Id = id;
+		Mail = mail;
 	}
-	public Integer getId() {
-		return Id;
+
+	public String getMail() {
+		return Mail;
 	}
-	public void setId(Integer id) {
-		Id = id;
+
+	public void setMail(String mail) {
+		Mail = mail;
 	}
+
 	public String getName() {
 		return Name;
 	}
+
 	public void setName(String name) {
 		Name = name;
 	}
+
 	public String getPassword() {
 		return Password;
 	}
+
 	public void setPassword(String password) {
 		Password = password;
 	}
+
 	public String getDesignation() {
 		return Designation;
 	}
+
 	public void setDesignation(String designation) {
 		Designation = designation;
 	}
+
 	public String getDepartment() {
 		return Department;
 	}
+
 	public void setDepartment(String department) {
 		Department = department;
 	}
-	public String getEmail() {
-		return Email;
+
+	public String getContact() {
+		return Contact;
 	}
-	public void setEmail(String email) {
-		Email = email;
+
+	public void setContact(String contact) {
+		Contact = contact;
 	}
+
 	public String getType() {
 		return Type;
 	}
+
 	public void setType(String type) {
 		Type = type;
 	}
+
 	@Override
 	public String toString() {
-		return "EmployeeEntity [Id=" + Id + ", Name=" + Name + ", Password=" + Password + ", Designation=" + Designation
-				+ ", Department=" + Department + ", Email=" + Email + ", Type=" + Type + "]";
+		return "EmployeeEntity [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Designation="
+				+ Designation + ", Department=" + Department + ", Contact=" + Contact + ", Type=" + Type + "]";
 	}
+	
 	
 	
 

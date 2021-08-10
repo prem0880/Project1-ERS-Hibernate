@@ -21,7 +21,7 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session1 = request.getSession(true);
-		Integer eid=(Integer)session1.getAttribute("user");
+		String mail=(String)session1.getAttribute("mail");
 		
 		
 		PrintWriter out = response.getWriter();
@@ -32,12 +32,13 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		Integer amount=(Integer.parseInt(request.getParameter("amount")));
 		String tdate=request.getParameter("tdate");
 		String ddate=request.getParameter("ddate");
-		Boolean status=(Boolean.parseBoolean(request.getParameter("status")));
+		String status=request.getParameter("status");
 		
 		EmployeeReimbursement er = new EmployeeReimbursement();
 		
-		EmployeeEntity ee = new EmployeeEntity(eid);
+		EmployeeEntity ee = new EmployeeEntity(mail);
 		
+	System.out.println(ee.getMail());
 		er.setEmployeeEntity(ee);
 		er.setId(rid);
 		er.setExpenseType(type);

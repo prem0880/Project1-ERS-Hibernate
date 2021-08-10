@@ -13,7 +13,7 @@ public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 	public void addEmployee(Employee e) {
 		
 		try {
-			
+			System.out.println(e.getMail()+" "+e.getName());
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction(); 
 			session.save(EmployeeMapper.mapEmployee(e));

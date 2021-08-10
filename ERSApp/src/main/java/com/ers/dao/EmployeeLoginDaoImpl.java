@@ -23,7 +23,7 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 			EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
 			if (session != null) {
 				   try {
-				    EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
+				    EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getMail());
 				    System.out.println(ee1.getType());
 				    if (e.getPassword().equals(ee1.getPassword())) {
 				     System.out.println("User: " + ee1.toString());
@@ -55,7 +55,7 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 			EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
 			if (session != null) {
 				   try {
-					EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
+					EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getMail());
 					System.out.println(ee1.toString());
 					if (ee1.getType().equals("manager")) {
 							System.out.println("manager here!!!");
@@ -91,16 +91,8 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 		EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
 		if (session != null) {
 			   try {
-				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
-				//System.out.println(ee1.getId()+" "+ee1.getName()+" "+ee1.getDesignation()+" "+ee1.getDepartment()+" "+ee1.getEmail()+" "+ee1.getType()); 
-//				e.setId(ee1.getId());
-//				e.setName(ee1.getName());
-//				e.setDesignation(ee1.getDesignation());
-//				e.setDepartment(ee1.getDepartment());
-//				e.setEmail(ee1.getEmail());
-//				e.setType(ee1.getType());
-
-				e = new Employee(ee1.getId(),ee1.getName(),ee1.getDesignation(),ee1.getDepartment(),ee1.getEmail(),ee1.getType());
+				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getMail());
+				e = new Employee(ee1.getMail(),ee1.getName(),ee1.getDesignation(),ee1.getDepartment(),ee1.getContact(),ee1.getType());
 				
 			   }   catch (Exception e1) {
 				   e1.printStackTrace();
@@ -134,7 +126,7 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 			EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
 			if(session!=null) {
 				
-				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getId());
+				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getMail());
 				
 				if(ee1.getName().equals(e.getName()) == false) {
 				ee1.setName(e.getName());}
@@ -142,8 +134,8 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 				ee1.setDesignation(e.getDesignation());}
 				if(ee1.getDepartment().equals(e.getDepartment()) == false) {
 				ee1.setDepartment(e.getDepartment());}
-				if(ee1.getEmail().equals(e.getEmail()) == false) {
-				ee1.setEmail(e.getEmail());}
+				if(ee1.getContact().equals(e.getContact()) == false) {
+				ee1.setContact(e.getContact());}
 				
 				session.saveOrUpdate(ee1);
 				System.out.println("Employee Details Updated...");

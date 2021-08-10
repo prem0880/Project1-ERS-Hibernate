@@ -17,8 +17,8 @@ pageEncoding="ISO-8859-1" session="true"%>
 <body>
 <%
 HttpSession session1 = request.getSession(true);
-Integer user = (Integer) session1.getAttribute("uname");
-String pass = (String) session1.getAttribute("upass");
+String user = (String) session1.getAttribute("mail");
+String pass = (String) session1.getAttribute("pass");
 out.println(user+" "+pass);
 %>
 

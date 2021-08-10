@@ -88,10 +88,10 @@ button:hover {
 <body>
 <%
 HttpSession session1 = request.getSession(true);
-Integer id=(Integer)session1.getAttribute("uname");
-out.println(id);
+String user=(String)session1.getAttribute("mail");
+out.println(user);
 HttpSession session2 = request.getSession();
-session2.setAttribute("user", id);
+session2.setAttribute("mail", user);
 %>
 <form action="http://localhost:8080/ERSApp/EmployeeReimbursementRequest" style="border:1px solid #ccc" method="get">
   <div class="container">
@@ -126,7 +126,7 @@ session2.setAttribute("user", id);
      </b></label>
        <br></br>
     <label for="status"><b>Status of Application : 
-    <input type="hidden" placeholder="Enter the status of Application" name="status"  value="false" required>Denied
+    <input type="hidden" placeholder="Enter the status of Application" name="status"  value="denied" required>Denied
     
     </b></label>
     

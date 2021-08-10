@@ -22,20 +22,20 @@ public class EmployeeUpdateDetails extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session1 = request.getSession(true);
-		Integer id = (Integer) session1.getAttribute("user");
-		out.println(id);
+		String mail=(String)session1.getAttribute("mail");
+		out.println(mail);
 		
 		String name=request.getParameter("name");
 		String des=request.getParameter("designation");
 		String dep=request.getParameter("department");
-		String email=request.getParameter("email");
+		String contact=request.getParameter("contact");
 		
 		Employee employee = new Employee();
-		employee.setId(id);
+		employee.setMail(mail);
 		employee.setName(name);
 		employee.setDesignation(des);
 		employee.setDepartment(dep);
-		employee.setEmail(email);
+		employee.setContact(contact);
 		
 		EmployeeLoginService elogin = new EmployeeLoginServiceImpl();
 		

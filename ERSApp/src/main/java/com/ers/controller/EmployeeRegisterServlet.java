@@ -21,21 +21,24 @@ public class EmployeeRegisterServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		Integer id=(Integer.parseInt(request.getParameter("id")));
-		String name=request.getParameter("name");
+		String mail=request.getParameter("mailid");
+		String name=request.getParameter("ename");
 		String pwd=request.getParameter("pass");
 		String des=request.getParameter("designation");
 		String dep=request.getParameter("department");
-		String email=request.getParameter("email");
+		String contact=request.getParameter("phone");
 		String type=request.getParameter("type");
 	
+		
+		System.out.println(mail+" "+name+" "+pwd+" "+des+" "+dep+" "+contact+" "+type);
+		
 		Employee employee = new Employee();
-		employee.setId(id);
+		employee.setMail(mail);
 		employee.setName(name);
 		employee.setPassword(pwd);
 		employee.setDesignation(des);
 		employee.setDepartment(dep);
-		employee.setEmail(email);
+		employee.setContact(contact);
 		employee.setType(type);
 		
 		

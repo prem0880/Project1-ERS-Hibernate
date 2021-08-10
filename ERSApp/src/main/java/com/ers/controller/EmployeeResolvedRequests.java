@@ -26,11 +26,11 @@ public class EmployeeResolvedRequests extends HttpServlet {
 		response.setContentType("text/html");
 		
 		HttpSession session1 = request.getSession(true);
-		Integer eid=(Integer)session1.getAttribute("uname");
+		String mail=(String)session1.getAttribute("mail");
 		
 		EmployeeReimbursement er= new EmployeeReimbursement();
 		
-		EmployeeEntity ee = new EmployeeEntity(eid);
+		EmployeeEntity ee = new EmployeeEntity(mail);
 		
 		er.setEmployeeEntity(ee);
 		
@@ -39,9 +39,9 @@ public class EmployeeResolvedRequests extends HttpServlet {
 		
 		List<EmployeeReimbursementEntity> ere=ers.viewResolvedRequest(er);
 	
-		request.setAttribute("plist", ere);
+		request.setAttribute("rlist", ere);
 		HttpSession session2 = request.getSession(true);
-		session2.setAttribute("Id",eid);
+		session2.setAttribute("mail",mail);
 		RequestDispatcher rd=request.getRequestDispatcher("ViewResolvedRequests.jsp");  
         rd.forward(request,response);
 	

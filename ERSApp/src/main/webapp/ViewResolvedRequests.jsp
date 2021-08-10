@@ -26,14 +26,14 @@ tr:nth-child(even) {
 </head>
 <body>
 <%HttpSession session1 = request.getSession(true);%>
-<%Integer eid=(Integer)session1.getAttribute("Id");%>
+<%String mail=(String)session1.getAttribute("mail");%>
 
 
 <h2>Resolved Reimbursement Requests</h2>
 
 <table>
   <tr>
-    <th>Employee ID</th>
+    <th>Employee Mail</th>
     <th>Employee Name</th>
     <th>Reimbursement ID</th>
     <th>Expense Type</th>
@@ -42,13 +42,13 @@ tr:nth-child(even) {
     <th>Date Of Submission</th>
     <th>Status Of Request</th>
   </tr>
-  <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("plist");
+  <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("rlist");
         for(EmployeeReimbursementEntity ere:e){%>
-         <%if(ere.getEmployeeEntity().getId() == eid){ %>
+         <%if(ere.getEmployeeEntity().getMail().equals(mail)){ %>
         <%-- Arranging data in tabular form
         --%>
             <tr>
-                <td><%=ere.getEmployeeEntity().getId() %></td>
+                <td><%=ere.getEmployeeEntity().getMail()%></td>
                 <td><%=ere.getEmployeeEntity().getName() %></td>
                 <td><%=ere.getId()%></td>
                 <td><%=ere.getExpenseType()%></td>

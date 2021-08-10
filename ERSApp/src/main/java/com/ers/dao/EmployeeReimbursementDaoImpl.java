@@ -36,14 +36,14 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	public List<EmployeeReimbursementEntity> viewPendingRequest(EmployeeReimbursement er) {
 		
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 0  ", EmployeeReimbursementEntity.class).getResultList();
+		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'denied'  ", EmployeeReimbursementEntity.class).getResultList();
 	}
 	
 	@Override
 	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
 	
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 1 ", EmployeeReimbursementEntity.class).getResultList();	
+		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'approved' ", EmployeeReimbursementEntity.class).getResultList();	
 	
 	}
 	

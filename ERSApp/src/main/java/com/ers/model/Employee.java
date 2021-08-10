@@ -2,36 +2,41 @@ package com.ers.model;
 
 public class Employee {
 
-	private Integer Id;
+	private String Mail;
 	private String Name;
 	private String Password;
 	private String Designation;
 	private String Department;
-	private String Email;
+	private String Contact;
 	private String Type;
 	
 	
-	public Employee() {
-		super();
-	}
 	
 	
-	public Employee(Integer id, String name, String designation, String department, String email, String type) {
+	public Employee(String mail, String name, String designation, String department, String contact,
+			String type) {
 		super();
-		Id = id;
+		Mail = mail;
 		Name = name;
 		Designation = designation;
 		Department = department;
-		Email = email;
+		Contact = contact;
 		Type = type;
 	}
 
-
-	public Integer getId() {
-		return Id;
+	public Employee() {
+		
 	}
-	public void setId(Integer id) {
-		Id = id;
+	
+	public Employee(String mail) {
+		super();
+		Mail = mail;
+	}
+	public String getMail() {
+		return Mail;
+	}
+	public void setMail(String mail) {
+		Mail = mail;
 	}
 	public String getName() {
 		return Name;
@@ -57,11 +62,11 @@ public class Employee {
 	public void setDepartment(String department) {
 		Department = department;
 	}
-	public String getEmail() {
-		return Email;
+	public String getContact() {
+		return Contact;
 	}
-	public void setEmail(String email) {
-		Email = email;
+	public void setContact(String contact) {
+		Contact = contact;
 	}
 	public String getType() {
 		return Type;
@@ -69,7 +74,11 @@ public class Employee {
 	public void setType(String type) {
 		Type = type;
 	}
-
+	@Override
+	public String toString() {
+		return "Employee [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Designation=" + Designation
+				+ ", Department=" + Department + ", Contact=" + Contact + ", Type=" + Type + "]";
+	}
 	
 	
 	

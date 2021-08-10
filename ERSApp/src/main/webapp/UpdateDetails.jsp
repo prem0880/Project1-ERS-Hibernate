@@ -79,10 +79,10 @@ button:hover {
 
 <%
 HttpSession session1 = request.getSession(true);
-Integer id = (Integer) session1.getAttribute("uname");
-out.println(id);
+String user = (String) session1.getAttribute("mail");
+out.println(user);
 HttpSession session2=request.getSession();
-session.setAttribute("user",id);
+session.setAttribute("mail",user);
 %>
 
 
@@ -104,8 +104,8 @@ session.setAttribute("user",id);
     <label for="department"><b>Department</b></label>
     <input type="text" placeholder="Enter Department" name="department" required>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="contact"><b>Contact Number</b></label>
+    <input type="text" placeholder="Enter contact" name="contact" required>
         
     <div class="clearfix">
     <button type="button" class="cancelbtn">Cancel</button>

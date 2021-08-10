@@ -23,11 +23,11 @@ public class EmployeeLoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		Integer id=Integer.parseInt(request.getParameter("uname"));
+		String mail=request.getParameter("mail");
 		String pwd=request.getParameter("pass");
 		Employee employee = new Employee();
 	
-		employee.setId(id);
+		employee.setMail(mail);
 		employee.setPassword(pwd);
 	
 		
@@ -45,8 +45,8 @@ public class EmployeeLoginServlet extends HttpServlet {
 					if(logintype.equals("employee"))
 					{
 						HttpSession session=request.getSession();
-						session.setAttribute("uname",id);
-					    session.setAttribute("upass",pwd);
+						session.setAttribute("mail",mail);
+					    session.setAttribute("pass",pwd);
 						
 	     			System.out.println("Username and Password are matched for Employee!!!");
 				 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.jsp");  
@@ -55,10 +55,10 @@ public class EmployeeLoginServlet extends HttpServlet {
 					else if(logintype.equals("manager"))
 					{
 						HttpSession session=request.getSession();
-						session.setAttribute("uname",id);
-					    session.setAttribute("upass",pwd);
+						session.setAttribute("mail",mail);
+					    session.setAttribute("pass",pwd);
 						
-						request.setAttribute("id",employee.getId());
+						request.setAttribute("mail",employee.getMail());
 						System.out.println("Username and Password are matched for manager!!!");
 					 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.jsp");  
 				        rd.forward(request,response);

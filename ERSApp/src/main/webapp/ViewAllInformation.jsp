@@ -29,11 +29,11 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>ID</th>
+    <th>Mail</th>
     <th>Name</th>
     <th>Designation</th>
     <th>Department</th>
-    <th>Email</th>
+    <th>Contact</th>
     <th>Type</th>
   </tr>
   <%List<EmployeeEntity> e =(List<EmployeeEntity>)request.getAttribute("viewall");
@@ -41,11 +41,11 @@ tr:nth-child(even) {
         <%-- Arranging data in tabular form
         --%>
             <tr>
-                <td><%=e1.getId()%></td>
+                <td><%=e1.getMail()%></td>
                 <td><%=e1.getName()%></td>
                 <td><%=e1.getDesignation()%></td>
                 <td><%=e1.getDepartment()%></td>
-                <td><%=e1.getEmail()%></td>
+                <td><%=e1.getContact()%></td>
                 <td><%=e1.getType()%></td>
                 
             </tr>

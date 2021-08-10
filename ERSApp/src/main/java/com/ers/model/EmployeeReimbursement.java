@@ -9,7 +9,7 @@ public class EmployeeReimbursement {
 	private Integer ExpenseAmount;
 	private String TransactionDate;
 	private String DateOfSubmission;
-	private Boolean StatusOfApplication;
+	private	String StatusOfApplication;
 	private EmployeeEntity employeeEntity;
 	
 	
@@ -46,10 +46,11 @@ public class EmployeeReimbursement {
 	public void setDateOfSubmission(String dateOfSubmission) {
 		DateOfSubmission = dateOfSubmission;
 	}
-	public Boolean getStatusOfApplication() {
+	
+	public String getStatusOfApplication() {
 		return StatusOfApplication;
 	}
-	public void setStatusOfApplication(Boolean statusOfApplication) {
+	public void setStatusOfApplication(String statusOfApplication) {
 		StatusOfApplication = statusOfApplication;
 	}
 	public EmployeeEntity getEmployeeEntity() {
