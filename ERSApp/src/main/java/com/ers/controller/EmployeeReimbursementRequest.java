@@ -3,6 +3,7 @@ package com.ers.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
 import javax.servlet.http.HttpServlet;
@@ -50,7 +51,27 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		
 		EmployeeReimbursementServiceImpl ers = new EmployeeReimbursementServiceImpl();
 		
-		ers.addRequest(er);
+		String stat=ers.addRequest(er);
+		
+		
+		if(stat.isEmpty()==false) {
+			
+			System.out.println("Reimbursement Request has been recorded successfully!!!");
+		 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.jsp");  
+	        rd.forward(request,response);
+			
+		}
+		else
+		{
+			
+			out.println("Reimbursement Request has not been recorded successfully!!!");
+		 	RequestDispatcher rd=request.getRequestDispatcher("ReimbursementRequest.jsp");  
+	        rd.forward(request,response);
+			
+			
+			
+		}
+		
 		
 		ers.viewPendingRequest(er);
 		

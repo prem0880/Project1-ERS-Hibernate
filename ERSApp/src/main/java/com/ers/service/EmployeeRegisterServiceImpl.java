@@ -8,9 +8,9 @@ public class EmployeeRegisterServiceImpl implements EmployeeRegisterService {
 	EmployeeRegisterDaoImpl edao = new EmployeeRegisterDaoImpl();
 	
 	@Override
-	public void addEmployee(Employee e) {
+	public String addEmployee(Employee e) {
 	
-	edao.addEmployee(e);	
+		return edao.addEmployee(e);	
 		
 	}
 }

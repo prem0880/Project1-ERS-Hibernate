@@ -3,6 +3,7 @@ package com.ers.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,9 +29,6 @@ public class EmployeeRegisterServlet extends HttpServlet {
 		String dep=request.getParameter("department");
 		String contact=request.getParameter("phone");
 		String type=request.getParameter("type");
-	
-		
-		System.out.println(mail+" "+name+" "+pwd+" "+des+" "+dep+" "+contact+" "+type);
 		
 		Employee employee = new Employee();
 		employee.setMail(mail);
@@ -44,7 +42,21 @@ public class EmployeeRegisterServlet extends HttpServlet {
 		
 		EmployeeRegisterServiceImpl eregister = new EmployeeRegisterServiceImpl();
 	
-		eregister.addEmployee(employee);
+		String status=eregister.addEmployee(employee);
+		
+		if(status.isEmpty()==false)
+		{
+			System.out.println("Registration is done successfully!!!");
+		 	RequestDispatcher rd=request.getRequestDispatcher("Login.html");  
+	        rd.forward(request,response);
+			
+		}
+		else
+		{
+			System.out.println("Registration is not done successfully!!!");
+		 	RequestDispatcher rd=request.getRequestDispatcher("SignUp.html");  
+	        rd.forward(request,response);
+		}
 		
 		
 	}

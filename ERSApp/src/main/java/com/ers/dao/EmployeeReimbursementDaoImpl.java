@@ -14,14 +14,14 @@ import com.ers.utility.EmployeeReimbursementMapper;
 public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 
 	@Override
-	public void addRequest(EmployeeReimbursement er) {
+	public String addRequest(EmployeeReimbursement er) {
 		
-		
+		String stat=null;
 		try {
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction(); 
-			session.save(EmployeeReimbursementMapper.mapReimbursement(er));
+			stat=(String)session.save(EmployeeReimbursementMapper.mapReimbursement(er));
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
 
@@ -29,6 +29,7 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 			
 			e1.printStackTrace();
 		}
+		return stat;
 	
 	}
 	

@@ -7,7 +7,7 @@ import com.ers.model.EmployeeReimbursement;
 
 public interface EmployeeReimbursementDao {
 
-	public void addRequest(EmployeeReimbursement er);
+	public String addRequest(EmployeeReimbursement er);
 	
 	public List<EmployeeReimbursementEntity>  viewPendingRequest(EmployeeReimbursement er);
 

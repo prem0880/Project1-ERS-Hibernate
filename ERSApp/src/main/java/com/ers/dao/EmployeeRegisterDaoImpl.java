@@ -10,13 +10,14 @@ import com.ers.utility.HibernateUtil;
 public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 
 	@Override
-	public void addEmployee(Employee e) {
+	public String addEmployee(Employee e) {
 		
+		String stat=null;
 		try {
 			System.out.println(e.getMail()+" "+e.getName());
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction(); 
-			session.save(EmployeeMapper.mapEmployee(e));
+			stat=(String) session.save(EmployeeMapper.mapEmployee(e));
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
 			
@@ -25,7 +26,7 @@ public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 			
 			e1.printStackTrace();
 		}
-
+		return stat;
 		
 	}
 	
