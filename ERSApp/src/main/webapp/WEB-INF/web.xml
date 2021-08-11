@@ -58,6 +58,18 @@
   	<description></description>
   	<servlet-class>com.ers.controller.EmployeeResolvedRequests</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ManagerReimbursementActions</servlet-name>
+  	<display-name>ManagerReimbursementActions</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerReimbursementActions</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerApproveAction</servlet-name>
+  	<display-name>ManagerApproveAction</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerApproveAction</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmployeeSignUp</servlet-name>
   	<url-pattern>/EmployeeSignUp</url-pattern>
@@ -93,5 +105,13 @@
   <servlet-mapping>
   	<servlet-name>EmployeeResolvedRequests</servlet-name>
   	<url-pattern>/EmployeeResolvedRequests</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerReimbursementActions</servlet-name>
+  	<url-pattern>/ManagerReimbursementActions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerApproveAction</servlet-name>
+  	<url-pattern>/ManagerApproveAction</url-pattern>
   </servlet-mapping>
 </web-app>

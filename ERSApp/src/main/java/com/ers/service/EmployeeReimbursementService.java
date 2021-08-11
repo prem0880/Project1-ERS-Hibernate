@@ -13,7 +13,7 @@ public interface EmployeeReimbursementService {
 	
 	public List<EmployeeReimbursementEntity>  viewResolvedRequest(EmployeeReimbursement er);
 	
-	
+	public List<Integer>  requestAction();
 	
 	
 }

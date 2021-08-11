@@ -1,8 +1,11 @@
 package com.ers.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import com.ers.entity.EmployeeEntity;
 import com.ers.entity.EmployeeReimbursementEntity;
@@ -49,6 +52,14 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	}
 	
 	
-	
+	@Override
+	public List<Integer> requestAction() {
+		List<Integer> list=new ArrayList<Integer>();
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		Query query=session.createQuery("select r.id from EmployeeReimbursementEntity r where r.StatusOfApplication= 'pending'");
+		list=query.list();
+		for(int x:list) {System.out.println(x);}
+		return list;
+	}
 	
 }

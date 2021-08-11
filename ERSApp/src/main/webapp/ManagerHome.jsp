@@ -20,13 +20,17 @@ HttpSession session1 = request.getSession(true);
 String user = (String) session1.getAttribute("mail");
 String pass = (String) session1.getAttribute("pass");
 out.println(user+" "+pass);
+HttpSession session2 = request.getSession(true);
+session2.setAttribute("mail",user);
 %>
 
   <h2>Manager Home</h2>
   <form action="http://localhost:8080/ERSApp/ManagerViewDetails" method="get">
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="VIEW All EMPLOYEE INFORMATION"/>
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Employees"/>
   </form>
- 
+ <form action="http://localhost:8080/ERSApp/ManagerReimbursementActions" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Approve/Deny Pending Reimbursement Requests"/>
+  </form>
 
 
 </body>

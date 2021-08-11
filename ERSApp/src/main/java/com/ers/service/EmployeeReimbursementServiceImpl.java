@@ -32,6 +32,12 @@ public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementSe
 		
 	}
 	
+	@Override
+	public List<Integer> requestAction() {
+	
+		return erd.requestAction();
+		
+	}
 	
 }
 

@@ -13,6 +13,7 @@ public interface EmployeeReimbursementDao {
 
 	public List<EmployeeReimbursementEntity>  viewResolvedRequest(EmployeeReimbursement er);
 
+	public List<Integer> requestAction();
 	
 	
 }
