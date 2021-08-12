@@ -25,13 +25,21 @@ session2.setAttribute("mail",user);
 %>
 
   <h2>Manager Home</h2>
-  <form action="http://localhost:8080/ERSApp/ManagerViewDetails" method="get">
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Employees"/>
-  </form>
  <form action="http://localhost:8080/ERSApp/ManagerReimbursementActions" method="get">
   <input type="submit" class="btn btn-primary btn-lg btn-block" value="Approve/Deny Pending Reimbursement Requests"/>
   </form>
-
-
+<form action="http://localhost:8080/ERSApp/ManagerPendingRequests" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Pending Requests of Employees"/>
+  </form>
+  <form action="http://localhost:8080/ERSApp/ManagerResolvedRequests" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Resolved Requests of Employees"/>
+  </form>
+  <form action="http://localhost:8080/ERSApp/Manager" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View Reimbursement Requests of Specific Employee"/>
+  </form>
+ <form action="http://localhost:8080/ERSApp/ManagerViewDetails" method="get">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Employees"/>
+  </form>
+ 
 </body>
 </html>

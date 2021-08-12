@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ers.model.EmployeeReimbursement;
 import com.ers.service.EmployeeReimbursementServiceImpl;
+import com.ers.service.ManagerLoginService;
+import com.ers.service.ManagerLoginServiceImpl;
 
 public class ManagerAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +31,7 @@ public class ManagerAction extends HttpServlet {
 		er.setId(id);
 		er.setStatusOfApplication(type);
 		
-		EmployeeReimbursementServiceImpl ers = new EmployeeReimbursementServiceImpl();
+		ManagerLoginService ers = new ManagerLoginServiceImpl();
 		
 		ers.responseAction(er);
 	

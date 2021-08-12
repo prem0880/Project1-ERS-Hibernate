@@ -13,7 +13,7 @@ public interface EmployeeLoginService {
 	
 	public Employee ViewDetails(Employee e);
 	
-	public List<EmployeeEntity> ViewAllDetails();
+	
 	
 	public void UpdateDetails(Employee e);
 }

@@ -31,11 +31,7 @@ public class EmployeeLoginServiceImpl implements EmployeeLoginService {
 	}
 	
 	
-	@Override
-	public List<EmployeeEntity> ViewAllDetails() {
 	
-		return edao.ViewAllDetails();
-	}
 	@Override
 	public void UpdateDetails(Employee e) {
 	

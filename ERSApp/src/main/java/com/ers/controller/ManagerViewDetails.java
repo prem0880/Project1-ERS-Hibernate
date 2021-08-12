@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 import com.ers.entity.EmployeeEntity;
 import com.ers.service.EmployeeLoginService;
 import com.ers.service.EmployeeLoginServiceImpl;
+import com.ers.service.ManagerLoginService;
+import com.ers.service.ManagerLoginServiceImpl;
 
 public class ManagerViewDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +29,7 @@ public class ManagerViewDetails extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Integer id = (Integer) session.getAttribute("uname");
 		
-		EmployeeLoginService elogin = new EmployeeLoginServiceImpl();
+		ManagerLoginService elogin = new ManagerLoginServiceImpl();
 		
 		List<EmployeeEntity> e = elogin.ViewAllDetails();
 		

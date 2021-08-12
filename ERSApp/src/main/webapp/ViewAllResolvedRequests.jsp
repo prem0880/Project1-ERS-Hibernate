@@ -29,8 +29,7 @@ tr:nth-child(even) {
 <%String mail=(String)session1.getAttribute("mail");%>
 
 
-
-<h2>Pending Reimbursement Requests</h2>
+<h2>Resolved Reimbursement Requests</h2>
 
 <table>
   <tr>
@@ -43,13 +42,12 @@ tr:nth-child(even) {
     <th>Date Of Submission</th>
     <th>Status Of Request</th>
   </tr>
-  <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("plist");
+  <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("rlist");
         for(EmployeeReimbursementEntity ere:e){%>
-   <%if(ere.getEmployeeEntity().getMail().equals(mail)){ %> 
         <%-- Arranging data in tabular form
         --%>
             <tr>
-                <td><%=ere.getEmployeeEntity().getMail() %></td>
+                <td><%=ere.getEmployeeEntity().getMail()%></td>
                 <td><%=ere.getEmployeeEntity().getName() %></td>
                 <td><%=ere.getId()%></td>
                 <td><%=ere.getExpenseType()%></td>
@@ -57,9 +55,9 @@ tr:nth-child(even) {
                 <td><%=ere.getTransactionDate()%></td>
                 <td><%=ere.getDateOfSubmission()%></td>
                 <td><%=ere.getStatusOfApplication()%></td>
-             <% }%>
+           
             </tr>
-   		<%}%>
+            <%}%>  
 </table>
 
 </body>

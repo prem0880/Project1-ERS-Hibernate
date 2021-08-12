@@ -45,8 +45,7 @@ tr:nth-child(even) {
   </tr>
   <%List<EmployeeReimbursementEntity> e =(List<EmployeeReimbursementEntity>)request.getAttribute("plist");
         for(EmployeeReimbursementEntity ere:e){%>
-   <%if(ere.getEmployeeEntity().getMail().equals(mail)){ %> 
-        <%-- Arranging data in tabular form
+       <%-- Arranging data in tabular form
         --%>
             <tr>
                 <td><%=ere.getEmployeeEntity().getMail() %></td>
@@ -57,7 +56,7 @@ tr:nth-child(even) {
                 <td><%=ere.getTransactionDate()%></td>
                 <td><%=ere.getDateOfSubmission()%></td>
                 <td><%=ere.getStatusOfApplication()%></td>
-             <% }%>
+           
             </tr>
    		<%}%>
 </table>

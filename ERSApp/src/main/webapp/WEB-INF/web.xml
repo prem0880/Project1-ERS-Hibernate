@@ -76,6 +76,18 @@
   	<description></description>
   	<servlet-class>com.ers.controller.ManagerAction</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ManagerPendingRequests</servlet-name>
+  	<display-name>ManagerPendingRequests</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerPendingRequests</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerResolvedRequests</servlet-name>
+  	<display-name>ManagerResolvedRequests</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerResolvedRequests</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmployeeSignUp</servlet-name>
   	<url-pattern>/EmployeeSignUp</url-pattern>
@@ -123,5 +135,13 @@
   <servlet-mapping>
   	<servlet-name>ManagerAction</servlet-name>
   	<url-pattern>/ManagerAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerPendingRequests</servlet-name>
+  	<url-pattern>/ManagerPendingRequests</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerResolvedRequests</servlet-name>
+  	<url-pattern>/ManagerResolvedRequests</url-pattern>
   </servlet-mapping>
 </web-app>

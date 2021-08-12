@@ -11,17 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ers.entity.EmployeeEntity;
 import com.ers.entity.EmployeeReimbursementEntity;
-import com.ers.service.EmployeeReimbursementServiceImpl;
+import com.ers.model.EmployeeReimbursement;
 import com.ers.service.ManagerLoginService;
 import com.ers.service.ManagerLoginServiceImpl;
 
-public class ManagerReimbursementActions extends HttpServlet {
+public class ManagerResolvedRequests extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 	
+	
+	
+
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
@@ -29,27 +32,24 @@ public class ManagerReimbursementActions extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		
-		//out.println(mail);
+		out.println(mail);
+		
+		EmployeeReimbursement er= new EmployeeReimbursement();
+		
+		EmployeeEntity ee = new EmployeeEntity(mail);
+		
+		er.setEmployeeEntity(ee);
+		
 		
 		ManagerLoginService ers = new ManagerLoginServiceImpl();
-	
-		List<Integer> ere=ers.requestAction();
-	
 		
-		out.println("<form action='http://localhost:8080/ERSApp/ManagerAction' method='get'>");
-		out.println("Reimbursement ID:"+"<select name='id' >");
+		List<EmployeeReimbursementEntity>ere = ers.viewAllResolvedRequest(er);
 		
-		for(Integer e:ere) {
-			
-			out.println("<option name='id'>"+e+"");
+		request.setAttribute("rlist", ere);
+		HttpSession session2 = request.getSession(true);
+		session2.setAttribute("mail", mail);
+		RequestDispatcher rd=request.getRequestDispatcher("ViewAllResolvedRequests.jsp");  
+        rd.forward(request,response);
 		}
-		out.println("</select>");
-		out.println("<input type='submit' name='type' value='approve'/>");
-		out.println("<input type='submit' name='type' value='reject'/>");
-		
-		out.println("</form>");
-		
-		
-	}
 
 }
