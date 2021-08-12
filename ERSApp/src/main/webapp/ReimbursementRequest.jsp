@@ -104,7 +104,7 @@ session2.setAttribute("mail", user);
    	<label for="Expense Type"><b>Expense Type
 	<select id="Expense Type" name="expensetype">
   		<option value="Medical">Medical</option>
-  		<option value="Food">Education</option>
+  		<option value="Education">Education</option>
   		<option value="Travel">Travel</option>
  	</select>
  	
@@ -126,7 +126,7 @@ session2.setAttribute("mail", user);
      </b></label>
        <br></br>
     <label for="status"><b>Status of Application : 
-    <input type="hidden" placeholder="Enter the status of Application" name="status"  value="denied" required>Denied
+    <input type="hidden" placeholder="Enter the status of Application" name="status"  value="pending" required>Pending
     
     </b></label>
     

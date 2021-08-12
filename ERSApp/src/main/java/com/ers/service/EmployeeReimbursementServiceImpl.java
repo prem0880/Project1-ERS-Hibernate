@@ -11,7 +11,7 @@ public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementSe
 	
 	EmployeeReimbursementDaoImpl erd= new EmployeeReimbursementDaoImpl();
 	@Override
-	public String addRequest(EmployeeReimbursement er) {
+	public Integer addRequest(EmployeeReimbursement er) {
 	
 		return erd.addRequest(er);
 		

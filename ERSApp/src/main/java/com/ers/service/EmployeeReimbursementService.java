@@ -7,7 +7,7 @@ import com.ers.model.EmployeeReimbursement;
 
 public interface EmployeeReimbursementService {
 
-	public String addRequest(EmployeeReimbursement er);
+	public Integer addRequest(EmployeeReimbursement er);
 	
 	public List<EmployeeReimbursementEntity>  viewPendingRequest(EmployeeReimbursement er);
 	

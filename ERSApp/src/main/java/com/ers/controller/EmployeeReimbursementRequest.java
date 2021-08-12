@@ -51,10 +51,10 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		
 		EmployeeReimbursementServiceImpl ers = new EmployeeReimbursementServiceImpl();
 		
-		String stat=ers.addRequest(er);
+		Integer stat=ers.addRequest(er);
 		
 		
-		if(stat.isEmpty()==false) {
+		if(stat!=0) {
 			
 			System.out.println("Reimbursement Request has been recorded successfully!!!");
 		 	RequestDispatcher rd=request.getRequestDispatcher("EmployeeHome.jsp");  

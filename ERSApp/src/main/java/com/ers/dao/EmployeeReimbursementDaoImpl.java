@@ -17,14 +17,14 @@ import com.ers.utility.EmployeeReimbursementMapper;
 public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 
 	@Override
-	public String addRequest(EmployeeReimbursement er) {
+	public Integer addRequest(EmployeeReimbursement er) {
 		
-		String stat=null;
+		Integer stat=0;
 		try {
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction(); 
-			stat=(String)session.save(EmployeeReimbursementMapper.mapReimbursement(er));
+			stat=(Integer)session.save(EmployeeReimbursementMapper.mapReimbursement(er));
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
 
@@ -40,14 +40,14 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	public List<EmployeeReimbursementEntity> viewPendingRequest(EmployeeReimbursement er) {
 		
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'denied'  ", EmployeeReimbursementEntity.class).getResultList();
+		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending'  ", EmployeeReimbursementEntity.class).getResultList();
 	}
 	
 	@Override
 	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
 	
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'approved' ", EmployeeReimbursementEntity.class).getResultList();	
+		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'approve' OR R.StatusOfApplication = 'reject' ", EmployeeReimbursementEntity.class).getResultList();	
 	
 	}
 	
