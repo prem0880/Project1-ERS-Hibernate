@@ -2,10 +2,14 @@ package com.ers.entity;
 
 
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name="Employee")
@@ -27,17 +31,10 @@ public class EmployeeEntity {
 	@Column(name="EmployeeType")
 	private String Type;
 	
-//	@OneToMany(mappedBy="EmployeeEntity",cascade=CascadeType.ALL)
-//	private Set<EmployeeReimbursementEntity> rset;
-//	
-//	public Set<EmployeeReimbursementEntity> getRset() {
-//		return rset;
-//	}
-//
-//	public void setRset(Set<EmployeeReimbursementEntity> rset) {
-//		this.rset = rset;
-//	}
-
+	@OneToMany(mappedBy="employeeEntity",cascade=CascadeType.ALL)
+	private Set<EmployeeReimbursementEntity> rset;
+	
+	
 	public EmployeeEntity() {
 		super();
 	}

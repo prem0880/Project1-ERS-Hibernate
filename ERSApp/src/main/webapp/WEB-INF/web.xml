@@ -88,6 +88,18 @@
   	<description></description>
   	<servlet-class>com.ers.controller.ManagerResolvedRequests</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ManagerEmployeeView</servlet-name>
+  	<display-name>ManagerEmployeeView</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerEmployeeView</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerSpecificView</servlet-name>
+  	<display-name>ManagerSpecificView</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.ManagerSpecificView</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmployeeSignUp</servlet-name>
   	<url-pattern>/EmployeeSignUp</url-pattern>
@@ -143,5 +155,13 @@
   <servlet-mapping>
   	<servlet-name>ManagerResolvedRequests</servlet-name>
   	<url-pattern>/ManagerResolvedRequests</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerEmployeeView</servlet-name>
+  	<url-pattern>/ManagerEmployeeView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerSpecificView</servlet-name>
+  	<url-pattern>/ManagerSpecificView</url-pattern>
   </servlet-mapping>
 </web-app>

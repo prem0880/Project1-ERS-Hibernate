@@ -5,7 +5,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password],input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -79,7 +79,7 @@ button:hover {
     <hr>
 
     <label for="employeemail"><b>Employee Email</b></label>
-    <input type="text" placeholder="Enter Employee mail" name="mailid" required>
+    <input type="email" placeholder="Enter Employee mail" name="mailid" required>
 
     <label for="employeename"><b>Employee Name</b></label>
     <input type="text" placeholder="Enter Employee Name" name="ename" required>
@@ -94,7 +94,7 @@ button:hover {
     <input type="text" placeholder="Enter Department" name="department" required>
 
     <label for="contact"><b>Contact Number</b></label>
-    <input type="text" placeholder="Enter Contact number" name="phone" required>
+    <input type="text" placeholder="Enter Contact number" name="phone" minlength="10" required>
     
     <label for="type"><b>Type</b></label>
     <td>Employee<input type="radio"  name="type" value="employee" required></td>

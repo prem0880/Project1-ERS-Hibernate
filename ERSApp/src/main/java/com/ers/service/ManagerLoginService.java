@@ -19,4 +19,8 @@ public interface ManagerLoginService {
 	
 	public List<EmployeeReimbursementEntity>  viewAllResolvedRequest(EmployeeReimbursement er);
 	
+	public List<String> viewSpecificEmployee();
+	
+	public List<EmployeeReimbursementEntity> viewSpecificEmployeeReimbursement(EmployeeReimbursement er);
+
 }

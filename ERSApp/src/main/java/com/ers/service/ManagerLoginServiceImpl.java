@@ -39,4 +39,14 @@ public class ManagerLoginServiceImpl implements ManagerLoginService{
 	
 		return mld.viewAllResolvedRequest(er);
 	}
+	
+	@Override
+	public List<String> viewSpecificEmployee() {
+	
+		return mld.viewSpecificEmployee();
+	}
+	@Override
+	public List<EmployeeReimbursementEntity> viewSpecificEmployeeReimbursement(EmployeeReimbursement er) {
+		return mld.viewSpecificEmployeeReimbursement(er);
+	}
 }

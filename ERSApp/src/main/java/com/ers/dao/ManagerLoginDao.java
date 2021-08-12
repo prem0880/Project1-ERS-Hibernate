@@ -18,4 +18,8 @@ public interface ManagerLoginDao {
     public List<EmployeeReimbursementEntity>  viewAllPendingRequest(EmployeeReimbursement er);
 	
 	public List<EmployeeReimbursementEntity>  viewAllResolvedRequest(EmployeeReimbursement er);
+
+	public List<String> viewSpecificEmployee();
+	
+	public List<EmployeeReimbursementEntity> viewSpecificEmployeeReimbursement(EmployeeReimbursement er);
 }

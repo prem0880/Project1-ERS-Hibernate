@@ -54,8 +54,8 @@ public class ManagerLoginDaoImpl implements ManagerLoginDao{
 	@Override
 	public List<EmployeeReimbursementEntity> viewAllPendingRequest(EmployeeReimbursement er) {
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending'", EmployeeReimbursementEntity.class).getResultList();
-	}
+	    return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending'", EmployeeReimbursementEntity.class).getResultList();
+    }
 	
 	@Override
 	public List<EmployeeReimbursementEntity> viewAllResolvedRequest(EmployeeReimbursement er) {
@@ -66,6 +66,19 @@ public class ManagerLoginDaoImpl implements ManagerLoginDao{
 	
 	}
 
+	@Override
+	public List<String> viewSpecificEmployee() {
+		List<String> list=new ArrayList<String>();
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		Query query=session.createQuery("SELECT employeeEntity.Mail FROM EmployeeReimbursementEntity ");
+		list=query.list();
+		for(String s:list) {System.out.println(s);}
+		return list;
+	}
 	
-	
+	public List<EmployeeReimbursementEntity> viewSpecificEmployeeReimbursement(EmployeeReimbursement er){
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.employeeEntity.Mail!=null", EmployeeReimbursementEntity.class).getResultList();
+		
+	}
 }

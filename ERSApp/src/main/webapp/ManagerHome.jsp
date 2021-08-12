@@ -34,7 +34,7 @@ session2.setAttribute("mail",user);
   <form action="http://localhost:8080/ERSApp/ManagerResolvedRequests" method="get">
   <input type="submit" class="btn btn-primary btn-lg btn-block" value="View All Resolved Requests of Employees"/>
   </form>
-  <form action="http://localhost:8080/ERSApp/Manager" method="get">
+  <form action="http://localhost:8080/ERSApp/ManagerEmployeeView" method="get">
   <input type="submit" class="btn btn-primary btn-lg btn-block" value="View Reimbursement Requests of Specific Employee"/>
   </form>
  <form action="http://localhost:8080/ERSApp/ManagerViewDetails" method="get">
