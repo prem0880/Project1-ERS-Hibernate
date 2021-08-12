@@ -15,5 +15,5 @@ public interface EmployeeReimbursementService {
 	
 	public List<Integer>  requestAction();
 	
-	
+	public void responseAction(EmployeeReimbursement er);
 }

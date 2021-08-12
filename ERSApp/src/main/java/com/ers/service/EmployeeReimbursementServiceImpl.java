@@ -39,5 +39,9 @@ public class EmployeeReimbursementServiceImpl implements EmployeeReimbursementSe
 		
 	}
 	
+	@Override
+	public void responseAction(EmployeeReimbursement er) {
+			erd.responseAction(er);
+	}
 }
 

@@ -36,18 +36,20 @@ tr:nth-child(even) {
 
 <h2>Pending Reimbursement Requests</h2>
  <%List<Integer> e =(List<Integer>)request.getAttribute("alist");%>
-      <form action="http://localhost:8080/ERSApp/ManagerApproveAction" method="get">
-  		  <label for="id">Reimbursement ID:</label>
-           <select name="id">
+        <label for="id">Reimbursement ID:</label>
+           <select  name="rid">
          
       <%  for(Integer ere:e){%>
         
           <option value="<%=ere%>"><%=ere%></option>
-        	<% }%>
+          <%=out.println(ere)%>
+         	<% }%>
 
   			</select>           
-           
-        	 <input type="submit" class="btn btn-success" name="type" value="Approve"/>
+           <form action="http://localhost:8080/ERSApp/ManagerAction" method="get">
+           <input type="submit" class="btn btn-success" name="type" value="Approve"/>
+           </form>
+           <form action="http://localhost:8080/ERSApp/ManagerAction" method="get">
   		   <input type="submit" class="btn btn-success" name="type" value="Deny"/>
   		   </form>
              

@@ -27,18 +27,25 @@ public class ManagerReimbursementActions extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		
-		out.println(mail);
+		//out.println(mail);
 		
 		EmployeeReimbursementServiceImpl ers = new EmployeeReimbursementServiceImpl();
 	
 		List<Integer> ere=ers.requestAction();
 	
 		
-		request.setAttribute("alist", ere);
-		HttpSession session2 = request.getSession(true);
-		session2.setAttribute("mail", mail);
-		RequestDispatcher rd=request.getRequestDispatcher("ViewReimbursementAction.jsp");  
-        rd.forward(request,response);
+		out.println("<form action='http://localhost:8080/ERSApp/ManagerAction' method='get'>");
+		out.println("Reimbursement ID:"+"<select name='id' >");
+		
+		for(Integer e:ere) {
+			
+			out.println("<option name='id'>"+e+"");
+		}
+		out.println("</select>");
+		out.println("<input type='submit' name='type' value='approve'/>");
+		out.println("<input type='submit' name='type' value='reject'/>");
+		
+		out.println("</form>");
 		
 		
 	}

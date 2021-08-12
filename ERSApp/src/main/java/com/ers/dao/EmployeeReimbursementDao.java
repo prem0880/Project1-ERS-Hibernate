@@ -15,5 +15,5 @@ public interface EmployeeReimbursementDao {
 
 	public List<Integer> requestAction();
 	
-	
+	public void responseAction(EmployeeReimbursement er);
 }

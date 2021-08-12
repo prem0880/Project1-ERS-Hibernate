@@ -62,4 +62,22 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 		return list;
 	}
 	
+	@Override
+	public void responseAction(EmployeeReimbursement er) {
+	
+		try{
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction(); 
+		EmployeeReimbursementEntity rid=session.load(EmployeeReimbursementEntity.class,er.getId());
+		rid.setStatusOfApplication(er.getStatusOfApplication());
+		session.merge(rid);
+		System.out.println("status...");
+		session.getTransaction().commit();
+		session.close();
+		}catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+	}
+	
 }
