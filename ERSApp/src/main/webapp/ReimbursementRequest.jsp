@@ -83,19 +83,23 @@ button:hover {
   }
 }
 </style>
+<script>
+function myFunction() {
+  alert("Your Details has been updated");
+}
+</script>
 
 </head>
 <body>
 <%
 HttpSession session1 = request.getSession(true);
 String user=(String)session1.getAttribute("mail");
-out.println(user);
 HttpSession session2 = request.getSession();
 session2.setAttribute("mail", user);
 %>
 <form action="http://localhost:8080/ERSApp/EmployeeReimbursementRequest" style="border:1px solid #ccc" method="get">
   <div class="container">
-    <h1>Employee Registration</h1>
+    <h1>Reimbursement Form</h1>
     <hr>
 
     <label for="Reimbursement"><b>Reimbursement ID</b></label>
@@ -132,7 +136,7 @@ session2.setAttribute("mail", user);
     
     <div class="clearfix">
     <button type="button" class="cancelbtn">Cancel</button>
-    <button type="submit" class="signupbtn">Request</button>
+    <button type="submit" class="signupbtn" onclick="myFunction()">Request</button>
      
     </div>
   </div>

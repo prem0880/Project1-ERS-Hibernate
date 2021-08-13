@@ -3,6 +3,7 @@ package com.ers.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,6 @@ public class ManagerAction extends HttpServlet {
 		Integer id=(Integer.parseInt(request.getParameter("id")));
 		String type=request.getParameter("type");
 		
-		out.println(id +"  "+type);	
 		
 		EmployeeReimbursement er = new EmployeeReimbursement();
 		
@@ -34,6 +34,11 @@ public class ManagerAction extends HttpServlet {
 		ManagerLoginService ers = new ManagerLoginServiceImpl();
 		
 		ers.responseAction(er);
+		
+		System.out.println("Request has been resolved!!!");
+	 	RequestDispatcher rd=request.getRequestDispatcher("ManagerHome.jsp");  
+        rd.forward(request,response);
+ 
 	
 	}
 

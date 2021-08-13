@@ -29,15 +29,13 @@ public class ManagerReimbursementActions extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		
-		//out.println(mail);
 		
 		ManagerLoginService ers = new ManagerLoginServiceImpl();
 	
 		List<Integer> ere=ers.requestAction();
 	
-		
 		out.println("<form action='http://localhost:8080/ERSApp/ManagerAction' method='get'>");
-		out.println("Reimbursement ID:"+"<select name='id' >");
+		out.println("Reimbursement ID:"+"<select class='form-group' name='id' >");
 		
 		for(Integer e:ere) {
 			
@@ -46,9 +44,8 @@ public class ManagerReimbursementActions extends HttpServlet {
 		out.println("</select>");
 		out.println("<input type='submit' name='type' value='approve'/>");
 		out.println("<input type='submit' name='type' value='reject'/>");
-		
+	
 		out.println("</form>");
-		
 		
 	}
 

@@ -100,6 +100,12 @@
   	<description></description>
   	<servlet-class>com.ers.controller.ManagerSpecificView</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutSession</servlet-name>
+  	<display-name>LogoutSession</display-name>
+  	<description></description>
+  	<servlet-class>com.ers.controller.LogoutSession</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EmployeeSignUp</servlet-name>
   	<url-pattern>/EmployeeSignUp</url-pattern>
@@ -163,5 +169,9 @@
   <servlet-mapping>
   	<servlet-name>ManagerSpecificView</servlet-name>
   	<url-pattern>/ManagerSpecificView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutSession</servlet-name>
+  	<url-pattern>/LogoutSession</url-pattern>
   </servlet-mapping>
 </web-app>

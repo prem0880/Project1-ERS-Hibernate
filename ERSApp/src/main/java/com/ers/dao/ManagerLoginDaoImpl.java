@@ -72,7 +72,6 @@ public class ManagerLoginDaoImpl implements ManagerLoginDao{
 		Session session=HibernateUtil.getSessionFactory().openSession();
 		Query query=session.createQuery("SELECT employeeEntity.Mail FROM EmployeeReimbursementEntity ");
 		list=query.list();
-		for(String s:list) {System.out.println(s);}
 		return list;
 	}
 	

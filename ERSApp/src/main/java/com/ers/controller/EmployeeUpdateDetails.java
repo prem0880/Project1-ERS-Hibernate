@@ -3,6 +3,7 @@ package com.ers.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +24,6 @@ public class EmployeeUpdateDetails extends HttpServlet {
 		
 		HttpSession session1 = request.getSession(true);
 		String mail=(String)session1.getAttribute("mail");
-		out.println(mail);
 		
 		String name=request.getParameter("name");
 		String des=request.getParameter("designation");
@@ -40,9 +40,10 @@ public class EmployeeUpdateDetails extends HttpServlet {
 		EmployeeLoginService elogin = new EmployeeLoginServiceImpl();
 		
 		elogin.UpdateDetails(employee);
-		
-		
-		
+	
+		request.getRequestDispatcher("EmployeeHome.jsp").include(request, response);
+         
+        out.close();
 	}
 
 }

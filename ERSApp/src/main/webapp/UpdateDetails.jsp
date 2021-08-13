@@ -74,13 +74,18 @@ button:hover {
   }
 }
 </style>
+<script>
+function myFunction() {
+  alert("Your Details has been updated");
+}
+</script>
 </head>
 <body>
 
 <%
 HttpSession session1 = request.getSession(true);
 String user = (String) session1.getAttribute("mail");
-out.println(user);
+//out.println(user);
 HttpSession session2=request.getSession();
 session.setAttribute("mail",user);
 %>
@@ -109,11 +114,12 @@ session.setAttribute("mail",user);
         
     <div class="clearfix">
     <button type="button" class="cancelbtn">Cancel</button>
-   <button type="submit" class="signupbtn">Update</button>
+   <button type="submit" class="signupbtn" onclick="myFunction()">Update</button>
     
     </div>
     
   </div>
 </form>
+
 </body>
 </html>
