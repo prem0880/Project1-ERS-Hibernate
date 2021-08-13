@@ -1,6 +1,7 @@
 package com.ers.dao;
 
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
 import com.ers.entity.EmployeeEntity;
@@ -11,10 +12,13 @@ import com.ers.utility.HibernateUtil;
 public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 
 	
-	
+	static Logger log = Logger.getLogger("EmployeeLoginDaoImpl.class");
+		
 	@Override
 	public Boolean checkLogin(Employee e) {
 	
+		log.info("INSIDE CHECK LOGIN-DAO IMPLEMENTATION");
+		
 		Boolean stat=false; 
 		try {
 			
@@ -47,6 +51,8 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 	@Override
 	public String checkLoginType(Employee e) {
 	
+		log.info("INSIDE CHECK LOGIN TYPE-DAO IMPLEMENTATION");
+		
 	String stat="null"; 
 		try {
 			
@@ -85,6 +91,8 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 	
 	@Override
 	public Employee ViewDetails(Employee e) {
+		log.info("INSIDE VIEW DETAILS-DAO IMPLEMENTATION");
+		
 		
 		Session session=HibernateUtil.getSessionFactory().openSession();
 		EmployeeEntity ee=EmployeeMapper.mapEmployee(e);
@@ -110,6 +118,8 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 	@Override
 	public void UpdateDetails(Employee e) {
 	
+		log.info("INSIDE UPDATE DETAILS-DAO IMPLEMENTATION");
+		
 		try {
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();

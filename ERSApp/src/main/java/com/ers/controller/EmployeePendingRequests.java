@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import com.ers.entity.EmployeeEntity;
 import com.ers.entity.EmployeeReimbursementEntity;
 import com.ers.model.EmployeeReimbursement;
@@ -18,9 +20,12 @@ import com.ers.service.EmployeeReimbursementServiceImpl;
 
 public class EmployeePendingRequests extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	static Logger log = Logger.getLogger("EmployeePendingRequests.class");
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		log.info("INSIDE EMPLOYEE PENDING REQUESTS SERVLET");
+		
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		

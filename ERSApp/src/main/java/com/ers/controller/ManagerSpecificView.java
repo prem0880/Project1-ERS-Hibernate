@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import com.ers.entity.EmployeeEntity;
 import com.ers.entity.EmployeeReimbursementEntity;
 import com.ers.model.EmployeeReimbursement;
@@ -19,8 +21,14 @@ import com.ers.service.ManagerLoginServiceImpl;
 
 public class ManagerSpecificView extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	static Logger log = Logger.getLogger("ManagerSpecificView.class");
+
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		log.info("INSIDE MANAGER SPECIFIC VIEW SERVLET");
+		
 		PrintWriter out=response.getWriter();
 		
 		response.setContentType("text/html");

@@ -2,7 +2,7 @@ package com.ers.dao;
 
 import java.util.List;
 
-
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -14,8 +14,17 @@ import com.ers.utility.EmployeeReimbursementMapper;
 
 public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 
+	
+	static Logger log = Logger.getLogger("EmployeeReimbursementDaoImpl.class");
+	
+	
+	
 	@Override
 	public Integer addRequest(EmployeeReimbursement er) {
+		
+		
+		log.info("INSIDE ADD REQUEST-DAO IMPL");
+		
 		
 		Integer stat=0;
 		try {
@@ -37,6 +46,8 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	@Override
 	public List<EmployeeReimbursementEntity> viewPendingRequest(EmployeeReimbursement er) {
 		
+		log.info("INSIDE VIEW PENDING REQUESTS-DAO IMPL");
+		
 		Session session=HibernateUtil.getSessionFactory().openSession();
 		Query query=session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending' AND R.employeeEntity.Mail=:id");
 		query.setParameter("id",er.getEmployeeEntity().getMail() );
@@ -46,6 +57,9 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	@Override
 	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
 	
+		log.info("INSIDE VIEW RESOLVED REQUESTS-DAO IMPL");
+		
+		
 		Session session=HibernateUtil.getSessionFactory().openSession();
 		Query query=session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication!= 'pending' AND R.employeeEntity.Mail=:id");
 		query.setParameter("id",er.getEmployeeEntity().getMail() );

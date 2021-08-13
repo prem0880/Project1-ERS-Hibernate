@@ -1,5 +1,6 @@
 package com.ers.dao;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
 import com.ers.model.Employee;
@@ -9,8 +10,14 @@ import com.ers.utility.HibernateUtil;
 
 public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 
+	
+	static Logger log = Logger.getLogger("EmployeeRegisterDaoImpl.class");
+	
+	
 	@Override
 	public String addEmployee(Employee e) {
+		
+		log.info("INSIDE ADD EMPLOYEE-DAO IMPL");
 		
 		String stat=null;
 		try {

@@ -10,15 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import com.ers.service.ManagerLoginService;
 import com.ers.service.ManagerLoginServiceImpl;
 
 public class ManagerReimbursementActions extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
+	static Logger log = Logger.getLogger("ManagerReimbursementActions.class");
+
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	
+		log.info("INSIDE MANAGER REIMBURSEMENT ACTIONS SERVLET");
+		
+		
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
