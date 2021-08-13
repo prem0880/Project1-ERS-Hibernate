@@ -20,7 +20,6 @@ body {
 HttpSession session1 = request.getSession(true);
 String user = (String) session1.getAttribute("mail");
 String pass = (String) session1.getAttribute("pass");
-// out.println(user+" "+pass);
 HttpSession session2=request.getSession();
 session.setAttribute("mail",user);
 %>
