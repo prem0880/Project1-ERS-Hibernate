@@ -77,7 +77,9 @@ public class ManagerLoginDaoImpl implements ManagerLoginDao{
 	
 	public List<EmployeeReimbursementEntity> viewSpecificEmployeeReimbursement(EmployeeReimbursement er){
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.employeeEntity.Mail!=null", EmployeeReimbursementEntity.class).getResultList();
 		
+		Query query=session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.employeeEntity.Mail=:id");
+		query.setParameter("id",er.getEmployeeEntity().getMail() );
+		return query.list();
 	}
 }

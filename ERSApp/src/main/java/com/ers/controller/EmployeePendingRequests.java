@@ -28,8 +28,6 @@ public class EmployeePendingRequests extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		
-		out.println(mail);
-		
 		EmployeeReimbursement er= new EmployeeReimbursement();
 		
 		EmployeeEntity ee = new EmployeeEntity(mail);

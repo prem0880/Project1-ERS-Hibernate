@@ -85,7 +85,7 @@ button:hover {
 </style>
 <script>
 function myFunction() {
-  alert("Your Details has been updated");
+  alert("Your Request has been Submitted");
 }
 </script>
 
@@ -102,9 +102,6 @@ session2.setAttribute("mail", user);
     <h1>Reimbursement Form</h1>
     <hr>
 
-    <label for="Reimbursement"><b>Reimbursement ID</b></label>
-    <input type="text" placeholder="Enter Reimbursement ID" name="rid" required>
-	
    	<label for="Expense Type"><b>Expense Type
 	<select id="Expense Type" name="expensetype">
   		<option value="Medical">Medical</option>

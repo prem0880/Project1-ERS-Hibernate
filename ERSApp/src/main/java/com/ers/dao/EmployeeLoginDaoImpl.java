@@ -1,6 +1,5 @@
 package com.ers.dao;
 
-import java.util.List;
 
 import org.hibernate.Session;
 
@@ -92,7 +91,7 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 		if (session != null) {
 			   try {
 				EmployeeEntity ee1 =  session.get(EmployeeEntity.class, ee.getMail());
-				e = new Employee(ee1.getMail(),ee1.getName(),ee1.getDesignation(),ee1.getDepartment(),ee1.getContact(),ee1.getType());
+				e = new Employee(ee1.getMail(),ee1.getName(),ee1.getDepartment(),ee1.getContact(),ee1.getType());
 				
 			   }   catch (Exception e1) {
 				   e1.printStackTrace();
@@ -122,8 +121,6 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 				
 				if(ee1.getName().equals(e.getName()) == false) {
 				ee1.setName(e.getName());}
-				if(ee1.getDesignation().equals(e.getDesignation()) == false) {
-				ee1.setDesignation(e.getDesignation());}
 				if(ee1.getDepartment().equals(e.getDepartment()) == false) {
 				ee1.setDepartment(e.getDepartment());}
 				if(ee1.getContact().equals(e.getContact()) == false) {

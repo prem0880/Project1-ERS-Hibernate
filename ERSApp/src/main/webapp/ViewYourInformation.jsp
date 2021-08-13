@@ -31,7 +31,6 @@ tr:nth-child(even) {
   <tr>
     <th>Mail</th>
     <th>Name</th>
-    <th>Designation</th>
     <th>Department</th>
     <th>Contact</th>
     <th>Type</th>
@@ -43,7 +42,6 @@ tr:nth-child(even) {
             <tr>
                 <td><%=e1.getMail()%></td>
                 <td><%=e1.getName()%></td>
-                <td><%=e1.getDesignation()%></td>
                 <td><%=e1.getDepartment()%></td>
                 <td><%=e1.getContact()%></td>
                 <td><%=e1.getType()%></td>

@@ -1,7 +1,7 @@
 package com.ers.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -22,7 +22,6 @@ public class EmployeeResolvedRequests extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
 		HttpSession session1 = request.getSession(true);

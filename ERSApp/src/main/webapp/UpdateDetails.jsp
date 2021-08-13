@@ -101,16 +101,23 @@ session.setAttribute("mail",user);
     <hr>
 
     <label for="employeename"><b>Employee Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required>
+    <input type="text" placeholder="Enter Name" pattern="[A-Za-z]{7,20}" name="name" required>
 
-    <label for="designation"><b>Designation</b></label>
-    <input type="text" placeholder="Enter Designation" name="designation" required>
 
-    <label for="department"><b>Department</b></label>
-    <input type="text" placeholder="Enter Department" name="department" required>
-
+<label for="Department"><b>Department
+	<select id="Department" name="department">
+  		<option value="Finance">Finance</option>
+  		<option value="Operations">Operations</option>
+  		<option value="R&D">Research and Development</option>
+  		<option value="Production">Production</option>
+  		<option value="Human Resources">Human Resources</option>
+ 	</select>
+ 	
+</b></label>
+	<br></br>
+  
     <label for="contact"><b>Contact Number</b></label>
-    <input type="text" placeholder="Enter contact" name="contact" required>
+    <input type="text" placeholder="Enter Contact number" name="contact"   pattern="[0-9]{10}" maxlength="10" required>     
         
     <div class="clearfix">
     <button type="button" class="cancelbtn">Cancel</button>

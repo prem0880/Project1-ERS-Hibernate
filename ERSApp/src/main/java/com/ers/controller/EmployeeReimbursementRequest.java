@@ -28,7 +28,6 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		Integer rid=(Integer.parseInt(request.getParameter("rid")));
 		String type=request.getParameter("expensetype");
 		Integer amount=(Integer.parseInt(request.getParameter("amount")));
 		String tdate=request.getParameter("tdate");
@@ -41,7 +40,6 @@ public class EmployeeReimbursementRequest extends HttpServlet {
 		
 	System.out.println(ee.getMail());
 		er.setEmployeeEntity(ee);
-		er.setId(rid);
 		er.setExpenseType(type);
 		er.setExpenseAmount(amount);
 		er.setTransactionDate(tdate);

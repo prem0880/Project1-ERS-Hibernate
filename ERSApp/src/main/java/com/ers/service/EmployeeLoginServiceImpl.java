@@ -1,10 +1,9 @@
 package com.ers.service;
 
-import java.util.List;
 
 import com.ers.dao.EmployeeLoginDao;
 import com.ers.dao.EmployeeLoginDaoImpl;
-import com.ers.entity.EmployeeEntity;
+
 import com.ers.model.Employee;
 
 public class EmployeeLoginServiceImpl implements EmployeeLoginService {

@@ -1,8 +1,6 @@
 package com.ers.dao;
 
-import java.util.List;
 
-import com.ers.entity.EmployeeEntity;
 import com.ers.model.Employee;
 
 public interface EmployeeLoginDao {
@@ -13,8 +11,6 @@ public interface EmployeeLoginDao {
 	
 	public Employee ViewDetails(Employee e);
 	
-	
-
 	public void UpdateDetails(Employee e);
 	
 

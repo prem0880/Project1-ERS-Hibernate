@@ -36,7 +36,7 @@ public class EmployeeViewDetails extends HttpServlet {
 		
 		Employee eview=elogin.ViewDetails(employee);
 	
-		ArrayList<Employee> eview1 = new ArrayList();
+		ArrayList<Employee> eview1 = new ArrayList<Employee>();
 		
 		eview1.add(eview);
 		request.setAttribute("view",eview1);

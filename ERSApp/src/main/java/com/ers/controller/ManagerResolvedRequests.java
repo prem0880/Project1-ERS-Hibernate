@@ -32,7 +32,6 @@ public class ManagerResolvedRequests extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		
-		out.println(mail);
 		
 		EmployeeReimbursement er= new EmployeeReimbursement();
 		

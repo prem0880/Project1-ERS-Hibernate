@@ -1,7 +1,6 @@
 package com.ers.entity;
 
 
-
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -22,8 +21,6 @@ public class EmployeeEntity {
 	private String Name;
 	@Column(name="EmployeePassword")
 	private String Password;
-	@Column(name="EmployeeDesignation")
-	private String Designation;
 	@Column(name="EmployeeDepartment")
 	private String Department;
 	@Column(name="EmployeeContact")
@@ -68,13 +65,6 @@ public class EmployeeEntity {
 		Password = password;
 	}
 
-	public String getDesignation() {
-		return Designation;
-	}
-
-	public void setDesignation(String designation) {
-		Designation = designation;
-	}
 
 	public String getDepartment() {
 		return Department;
@@ -102,11 +92,10 @@ public class EmployeeEntity {
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Designation="
-				+ Designation + ", Department=" + Department + ", Contact=" + Contact + ", Type=" + Type + "]";
+		return "EmployeeEntity [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Department="
+				+ Department + ", Contact=" + Contact + ", Type=" + Type + "]";
 	}
-	
-	
+
 	
 
 	

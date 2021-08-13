@@ -1,13 +1,11 @@
 package com.ers.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import com.ers.entity.EmployeeEntity;
 import com.ers.entity.EmployeeReimbursementEntity;
 
 import com.ers.model.EmployeeReimbursement;
@@ -40,15 +38,18 @@ public class EmployeeReimbursementDaoImpl implements EmployeeReimbursementDao {
 	public List<EmployeeReimbursementEntity> viewPendingRequest(EmployeeReimbursement er) {
 		
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending'", EmployeeReimbursementEntity.class).getResultList();
+		Query query=session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'pending' AND R.employeeEntity.Mail=:id");
+		query.setParameter("id",er.getEmployeeEntity().getMail() );
+		return query.list();
 	}
 	
 	@Override
 	public List<EmployeeReimbursementEntity> viewResolvedRequest(EmployeeReimbursement er) {
 	
 		Session session=HibernateUtil.getSessionFactory().openSession();
-		return session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication = 'approve' OR R.StatusOfApplication = 'reject' ", EmployeeReimbursementEntity.class).getResultList();	
-	
+		Query query=session.createQuery("FROM EmployeeReimbursementEntity R WHERE R.StatusOfApplication!= 'pending' AND R.employeeEntity.Mail=:id");
+		query.setParameter("id",er.getEmployeeEntity().getMail() );
+		return query.list();
 	}
 	
 	

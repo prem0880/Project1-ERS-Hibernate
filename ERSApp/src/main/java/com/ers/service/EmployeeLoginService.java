@@ -1,8 +1,6 @@
 package com.ers.service;
 
-import java.util.List;
 
-import com.ers.entity.EmployeeEntity;
 import com.ers.model.Employee;
 
 public interface EmployeeLoginService {

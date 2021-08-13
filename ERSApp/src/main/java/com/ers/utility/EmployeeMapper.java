@@ -10,7 +10,6 @@ public class EmployeeMapper {
 		entity.setMail(e.getMail());
 		entity.setName(e.getName());
 		entity.setPassword(e.getPassword());
-		entity.setDesignation(e.getDesignation());
 		entity.setDepartment(e.getDepartment());
 		entity.setContact(e.getContact());
 		entity.setType(e.getType());

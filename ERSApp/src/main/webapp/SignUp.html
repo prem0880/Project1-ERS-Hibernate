@@ -82,19 +82,25 @@ button:hover {
     <input type="email" placeholder="Enter Employee mail" name="mailid" required>
 
     <label for="employeename"><b>Employee Name</b></label>
-    <input type="text" placeholder="Enter Employee Name" name="ename" maxlength="20" required>
+    <input type="text" placeholder="Enter Employee Name" name="ename" pattern="[A-Za-z]{7,20}"  required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" maxlength="10" required>
+    <input type="password" placeholder="Enter Password" name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"  required>
 
-    <label for="designation"><b>Designation</b></label>
-    <input type="text" placeholder="Enter Designation" name="designation" maxlength="10" required>
-
-    <label for="department"><b>Department</b></label>
-    <input type="text" placeholder="Enter Department" name="department" maxlength="10" required>
-
+<label for="Department"><b>Department
+	<select id="Department" name="department">
+  		<option value="Finance">Finance</option>
+  		<option value="Operations">Operations</option>
+  		<option value="R&D">Research and Development</option>
+  		<option value="Production">Production</option>
+  		<option value="Human Resources">Human Resources</option>
+ 	</select>
+ 	
+</b></label>
+	<br></br>
+	
     <label for="contact"><b>Contact Number</b></label>
-    <input type="text" placeholder="Enter Contact number" name="phone"  pattern="[1-9]{1}[0-9]{9}" maxlength="10" required>
+    <input type="text" placeholder="Enter Contact number" name="phone"   pattern="[0-9]{10}" maxlength="10" required>
     
     <label for="type"><b>Type</b></label>
     <td>Employee<input type="radio"  name="type" value="employee" required></td>

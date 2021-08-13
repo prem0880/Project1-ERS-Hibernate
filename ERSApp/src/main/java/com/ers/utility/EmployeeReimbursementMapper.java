@@ -9,7 +9,6 @@ public class EmployeeReimbursementMapper {
 
 	public static EmployeeReimbursementEntity mapReimbursement(EmployeeReimbursement er) {
 		EmployeeReimbursementEntity entity=new EmployeeReimbursementEntity();
-	    entity.setId(er.getId());
 	    entity.setEmployeeEntity(er.getEmployeeEntity());
 	    entity.setExpenseType(er.getExpenseType());
 	    entity.setExpenseAmount(er.getExpenseAmount());

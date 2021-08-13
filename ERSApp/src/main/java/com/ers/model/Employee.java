@@ -5,7 +5,6 @@ public class Employee {
 	private String Mail;
 	private String Name;
 	private String Password;
-	private String Designation;
 	private String Department;
 	private String Contact;
 	private String Type;
@@ -13,12 +12,11 @@ public class Employee {
 	
 	
 	
-	public Employee(String mail, String name, String designation, String department, String contact,
+	public Employee(String mail, String name, String department, String contact,
 			String type) {
 		super();
 		Mail = mail;
 		Name = name;
-		Designation = designation;
 		Department = department;
 		Contact = contact;
 		Type = type;
@@ -50,12 +48,7 @@ public class Employee {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	public String getDesignation() {
-		return Designation;
-	}
-	public void setDesignation(String designation) {
-		Designation = designation;
-	}
+	
 	public String getDepartment() {
 		return Department;
 	}
@@ -74,11 +67,13 @@ public class Employee {
 	public void setType(String type) {
 		Type = type;
 	}
+
 	@Override
 	public String toString() {
-		return "Employee [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Designation=" + Designation
-				+ ", Department=" + Department + ", Contact=" + Contact + ", Type=" + Type + "]";
+		return "Employee [Mail=" + Mail + ", Name=" + Name + ", Password=" + Password + ", Department=" + Department
+				+ ", Contact=" + Contact + ", Type=" + Type + "]";
 	}
+	
 	
 	
 	

@@ -3,7 +3,6 @@ package com.ers.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,14 +25,12 @@ public class EmployeeUpdateDetails extends HttpServlet {
 		String mail=(String)session1.getAttribute("mail");
 		
 		String name=request.getParameter("name");
-		String des=request.getParameter("designation");
 		String dep=request.getParameter("department");
 		String contact=request.getParameter("contact");
 		
 		Employee employee = new Employee();
 		employee.setMail(mail);
 		employee.setName(name);
-		employee.setDesignation(des);
 		employee.setDepartment(dep);
 		employee.setContact(contact);
 		
