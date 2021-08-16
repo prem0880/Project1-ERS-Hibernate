@@ -20,7 +20,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	static Logger log = Logger.getLogger("EmployeeLoginServlet.class");
-	
+	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   
 		log.info("INSIDE EMPLOYEE LOGIN SERVLET");
