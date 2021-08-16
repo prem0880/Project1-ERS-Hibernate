@@ -19,7 +19,7 @@ public class EmployeeLoginDaoImpl implements EmployeeLoginDao {
 	
 		log.info("INSIDE CHECK LOGIN-DAO IMPLEMENTATION");
 		
-		Boolean stat=false; 
+		Boolean stat=false;  
 		try {
 			
 			Session session=HibernateUtil.getSessionFactory().openSession();
