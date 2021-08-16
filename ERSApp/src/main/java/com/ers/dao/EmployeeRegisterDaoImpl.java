@@ -28,7 +28,7 @@ public class EmployeeRegisterDaoImpl implements EmployeeRegisterDao{
 			System.out.println("employee inserted...");
 			session.getTransaction().commit();
 			
-			
+	
 		} catch (Exception e1) {
 			
 			e1.printStackTrace();
