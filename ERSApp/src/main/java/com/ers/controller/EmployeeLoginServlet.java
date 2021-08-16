@@ -39,7 +39,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 		Boolean loginstat = elogin.checkLogin(employee);
 		
 		
-		if(loginstat == true) {
+		if(loginstat == true) { 
 				 
 	     
 					String logintype = elogin.checkLoginType(employee);
