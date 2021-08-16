@@ -22,7 +22,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 	static Logger log = Logger.getLogger("EmployeeLoginServlet.class");
 	  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  
+   
 		log.info("INSIDE EMPLOYEE LOGIN SERVLET");
 		response.setContentType("text/html");
 		
