@@ -29,7 +29,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 		String mail=request.getParameter("mail");
 		String pwd=request.getParameter("pass");
 		Employee employee = new Employee();
-	
+	  
 		employee.setMail(mail);
 		employee.setPassword(pwd);
 	
