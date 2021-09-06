@@ -11,7 +11,5 @@ public interface EmployeeLoginService {
 	
 	public Employee ViewDetails(Employee e);
 	
-	
-	
 	public void UpdateDetails(Employee e);
 }
