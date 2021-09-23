@@ -34,4 +34,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B ('**/pom.xml') verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=prem0880_Project1-ERS-Hibernate
+        run: mvn -B ('rms/pom.xml') verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=prem0880_Project1-ERS-Hibernate
